@@ -42,32 +42,38 @@ STOP_WORDS: Set[str] = {
 def load_raw_data() -> Dict[str, Any]:
     """
     Carga todos los JSON crudos de data/raw/.
-    Espera: reviews_f1_combined.json o los archivos individuales.
+    Prioridad: archivos individuales por fuente (reviews_youtube.json, etc.).
+    Si no hay individuales, usa reviews_f1_combined.json como fallback.
     """
-    combined_path = DATA_RAW / "reviews_f1_combined.json"
-    if combined_path.exists():
-        with open(combined_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    # Cargar individuales y combinar
     all_reviews = []
     sources = {}
-    for name in [
-        "reviews_imdb.json",
-        "reviews_rottentomatoes.json",
-        "reviews_instagram.json",
-        "reviews_reddit.json",
-        "reviews_youtube.json",
-    ]:
-        path = DATA_RAW / name
+    individual_files = [
+        ("reviews_imdb.json", "IMDB"),
+        ("reviews_rottentomatoes.json", "Rotten Tomatoes"),
+        ("reviews_instagram.json", "Instagram"),
+        ("reviews_reddit.json", "Reddit"),
+        ("reviews_youtube.json", "YouTube"),
+    ]
+
+    for filename, src_name in individual_files:
+        path = DATA_RAW / filename
         if path.exists():
             with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
             reviews = data.get("reviews", data) if isinstance(data, dict) else data
             reviews = reviews if isinstance(reviews, list) else []
-            src = "YouTube" if "youtube" in name else "Reddit" if "reddit" in name else "Instagram" if "instagram" in name else "Rotten Tomatoes" if "rottentomatoes" in name else "IMDB"
-            sources[src] = len(reviews)
-            all_reviews.extend(reviews)
+            if reviews:
+                sources[src_name] = len(reviews)
+                all_reviews.extend(reviews)
+
+    # Fallback: si no hay individuales, usar combined
+    if not all_reviews:
+        combined_path = DATA_RAW / "reviews_f1_combined.json"
+        if combined_path.exists():
+            with open(combined_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            all_reviews = data.get("reviews", [])
+            sources = data.get("sources", {})
 
     return {
         "movie": "F1 (2025)",

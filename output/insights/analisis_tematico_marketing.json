@@ -1,0 +1,875 @@
+{
+  "resumen": {
+    "total_analizado": 525,
+    "positive": 285,
+    "neutral": 182,
+    "negative": 58,
+    "porcentaje_positivo": 54.3
+  },
+  "por_que_positivo": {
+    "palabras_mas_frecuentes": [
+      {
+        "term": "best",
+        "count": 29
+      },
+      {
+        "term": "watched",
+        "count": 25
+      },
+      {
+        "term": "brad",
+        "count": 25
+      },
+      {
+        "term": "good",
+        "count": 24
+      },
+      {
+        "term": "great",
+        "count": 19
+      },
+      {
+        "term": "pitt",
+        "count": 19
+      },
+      {
+        "term": "watching",
+        "count": 18
+      },
+      {
+        "term": "watch",
+        "count": 17
+      },
+      {
+        "term": "trailer",
+        "count": 16
+      },
+      {
+        "term": "movies",
+        "count": 13
+      },
+      {
+        "term": "looks",
+        "count": 13
+      },
+      {
+        "term": "seen",
+        "count": 12
+      },
+      {
+        "term": "theater",
+        "count": 12
+      },
+      {
+        "term": "loved",
+        "count": 11
+      },
+      {
+        "term": "more",
+        "count": 11
+      },
+      {
+        "term": "love",
+        "count": 11
+      },
+      {
+        "term": "time",
+        "count": 10
+      },
+      {
+        "term": "saw",
+        "count": 10
+      },
+      {
+        "term": "imax",
+        "count": 10
+      },
+      {
+        "term": "ever",
+        "count": 10
+      },
+      {
+        "term": "they",
+        "count": 9
+      },
+      {
+        "term": "there",
+        "count": 9
+      },
+      {
+        "term": "hans",
+        "count": 9
+      },
+      {
+        "term": "zimmer",
+        "count": 9
+      },
+      {
+        "term": "year",
+        "count": 9
+      }
+    ],
+    "bigramas_recurrentes": [
+      {
+        "term": "brad pitt",
+        "count": 16
+      },
+      {
+        "term": "hans zimmer",
+        "count": 8
+      },
+      {
+        "term": "score hans",
+        "count": 5
+      },
+      {
+        "term": "hope strategy",
+        "count": 4
+      },
+      {
+        "term": "ever seen",
+        "count": 4
+      },
+      {
+        "term": "watched yesterday",
+        "count": 4
+      },
+      {
+        "term": "looks good",
+        "count": 4
+      },
+      {
+        "term": "original score",
+        "count": 3
+      },
+      {
+        "term": "better than",
+        "count": 3
+      },
+      {
+        "term": "best year",
+        "count": 3
+      },
+      {
+        "term": "best picture",
+        "count": 3
+      },
+      {
+        "term": "highly recommend",
+        "count": 3
+      },
+      {
+        "term": "kerry condon",
+        "count": 3
+      },
+      {
+        "term": "grand turismo",
+        "count": 3
+      },
+      {
+        "term": "big screen",
+        "count": 3
+      },
+      {
+        "term": "tom cruise",
+        "count": 3
+      },
+      {
+        "term": "sonny hayes",
+        "count": 3
+      },
+      {
+        "term": "watch again",
+        "count": 3
+      },
+      {
+        "term": "west location",
+        "count": 2
+      },
+      {
+        "term": "https sportsmobile",
+        "count": 2
+      }
+    ],
+    "terminos_distintivos_vs_negativo": [
+      "best",
+      "watched",
+      "good",
+      "great",
+      "watch",
+      "movies",
+      "theater",
+      "seen",
+      "love",
+      "more",
+      "loved",
+      "ever",
+      "imax",
+      "why",
+      "much"
+    ],
+    "citas_representativas": [
+      {
+        "content": "\"Original Score by Hans Zimmer\" \nThat's perfect !!!",
+        "source": "YouTube",
+        "votes": "3482"
+      },
+      {
+        "content": "2:23 original score by hans zimmer.... oh god im seated",
+        "source": "YouTube",
+        "votes": "2654"
+      },
+      {
+        "content": "Just saw it, and I LOVED it. This coming from a woman who has zero interest in race cars. It was a phenomenal movie.",
+        "source": "YouTube",
+        "votes": "1344"
+      },
+      {
+        "content": "2:15 cannot get anymore realistic❤",
+        "source": "YouTube",
+        "votes": "1196"
+      },
+      {
+        "content": "27 june - F1\n03 july  - jurassic world \n11 july  - Superman \n26 july  - Fantastic 4 \n \nWhat a incredible months that is",
+        "source": "YouTube",
+        "votes": "1168"
+      }
+    ],
+    "insight_marketing": [
+      "Valoración emocional muy alta: amor, grandeza, perfección",
+      "Brad Pitt y actuaciones como pilares del éxito",
+      "El trailer y la edición generan hype extremo",
+      "La banda sonora de Hans Zimmer como gancho emocional",
+      "Intención de ver en cines (no streaming)"
+    ]
+  },
+  "por_que_negativo": {
+    "palabras_mas_frecuentes": [
+      {
+        "term": "top",
+        "count": 10
+      },
+      {
+        "term": "gun",
+        "count": 10
+      },
+      {
+        "term": "trailer",
+        "count": 9
+      },
+      {
+        "term": "time",
+        "count": 5
+      },
+      {
+        "term": "brad",
+        "count": 5
+      },
+      {
+        "term": "crazy",
+        "count": 4
+      },
+      {
+        "term": "made",
+        "count": 4
+      },
+      {
+        "term": "watching",
+        "count": 4
+      },
+      {
+        "term": "director",
+        "count": 4
+      },
+      {
+        "term": "sound",
+        "count": 4
+      },
+      {
+        "term": "hits",
+        "count": 4
+      },
+      {
+        "term": "insane",
+        "count": 4
+      },
+      {
+        "term": "sonny",
+        "count": 3
+      },
+      {
+        "term": "life",
+        "count": 3
+      },
+      {
+        "term": "racing",
+        "count": 3
+      },
+      {
+        "term": "other",
+        "count": 3
+      },
+      {
+        "term": "auf",
+        "count": 3
+      },
+      {
+        "term": "leclerc",
+        "count": 3
+      },
+      {
+        "term": "ferrari",
+        "count": 3
+      },
+      {
+        "term": "maverick",
+        "count": 3
+      },
+      {
+        "term": "damn",
+        "count": 3
+      },
+      {
+        "term": "pitt",
+        "count": 3
+      },
+      {
+        "term": "fight",
+        "count": 3
+      },
+      {
+        "term": "fire",
+        "count": 3
+      },
+      {
+        "term": "cars",
+        "count": 3
+      }
+    ],
+    "bigramas_recurrentes": [
+      {
+        "term": "top gun",
+        "count": 10
+      },
+      {
+        "term": "director top",
+        "count": 4
+      },
+      {
+        "term": "gun maverick",
+        "count": 3
+      },
+      {
+        "term": "brad pitt",
+        "count": 3
+      },
+      {
+        "term": "sonny overtaking",
+        "count": 2
+      },
+      {
+        "term": "bet gonna",
+        "count": 2
+      },
+      {
+        "term": "three laps",
+        "count": 2
+      },
+      {
+        "term": "low quality",
+        "count": 1
+      },
+      {
+        "term": "always thought",
+        "count": 1
+      },
+      {
+        "term": "thought because",
+        "count": 1
+      },
+      {
+        "term": "because sonny",
+        "count": 1
+      },
+      {
+        "term": "sonny hayes",
+        "count": 1
+      },
+      {
+        "term": "hayes gambler",
+        "count": 1
+      },
+      {
+        "term": "gambler lost",
+        "count": 1
+      },
+      {
+        "term": "lost control",
+        "count": 1
+      },
+      {
+        "term": "control fortune",
+        "count": 1
+      },
+      {
+        "term": "fortune purpose",
+        "count": 1
+      },
+      {
+        "term": "purpose deck",
+        "count": 1
+      },
+      {
+        "term": "deck every",
+        "count": 1
+      },
+      {
+        "term": "every time",
+        "count": 1
+      }
+    ],
+    "terminos_distintivos_vs_positivo": [
+      "gun",
+      "hits",
+      "director",
+      "insane",
+      "sound",
+      "made",
+      "crazy",
+      "damn",
+      "auf",
+      "gonna",
+      "leclerc",
+      "fight",
+      "ferrari",
+      "life",
+      "other"
+    ],
+    "citas_representativas": [
+      {
+        "content": "Leclerc: \"Even a fake team is passing me\"\nFerrari: \"Must be the water\"",
+        "source": "YouTube",
+        "votes": "12982"
+      },
+      {
+        "content": "Whoever cut this trailer, give them a raise! This is how you make a movie trailer! The first 30 seconds had me hooked!",
+        "source": "YouTube",
+        "votes": "1571"
+      },
+      {
+        "content": "Trailer: Director of TOP GUN: MAVERICK \nMe: Say less, I'm in",
+        "source": "YouTube",
+        "votes": "1152"
+      },
+      {
+        "content": "0:40 The 2023 pilots\n1:03 Sonny overtaking Checo\n1:17 Zhou's Alfa Romeo\n1:54 Alonso's Aston Martin\n2:06 Abu Dhabi 2023\n2:11 Checo's incident with Leclerc in Mexico 23 😢\n2:13 Sonny overtaking Sainz and",
+        "source": "YouTube",
+        "votes": "489"
+      },
+      {
+        "content": "Not sure if it's the movie or just the trailer but I've probably watched less than 10 minutes of F1 in my entire life and this still got me glued to the screen the whole time.",
+        "source": "YouTube",
+        "votes": "471"
+      }
+    ],
+    "insight_marketing": [
+      "Percepción de baja calidad"
+    ]
+  },
+  "por_que_neutral": {
+    "palabras_mas_frecuentes": [
+      {
+        "term": "pitt",
+        "count": 16
+      },
+      {
+        "term": "brad",
+        "count": 15
+      },
+      {
+        "term": "trailer",
+        "count": 14
+      },
+      {
+        "term": "what",
+        "count": 14
+      },
+      {
+        "term": "they",
+        "count": 9
+      },
+      {
+        "term": "watching",
+        "count": 9
+      },
+      {
+        "term": "watch",
+        "count": 8
+      },
+      {
+        "term": "max",
+        "count": 6
+      },
+      {
+        "term": "cars",
+        "count": 6
+      },
+      {
+        "term": "imagine",
+        "count": 5
+      },
+      {
+        "term": "laps",
+        "count": 5
+      },
+      {
+        "term": "driven",
+        "count": 5
+      },
+      {
+        "term": "old",
+        "count": 5
+      },
+      {
+        "term": "car",
+        "count": 5
+      },
+      {
+        "term": "actor",
+        "count": 4
+      },
+      {
+        "term": "different",
+        "count": 4
+      },
+      {
+        "term": "gonna",
+        "count": 4
+      },
+      {
+        "term": "need",
+        "count": 4
+      },
+      {
+        "term": "seeing",
+        "count": 4
+      },
+      {
+        "term": "must",
+        "count": 4
+      },
+      {
+        "term": "wait",
+        "count": 4
+      },
+      {
+        "term": "saw",
+        "count": 4
+      },
+      {
+        "term": "bro",
+        "count": 4
+      },
+      {
+        "term": "lifetime",
+        "count": 4
+      },
+      {
+        "term": "man",
+        "count": 4
+      }
+    ],
+    "bigramas_recurrentes": [
+      {
+        "term": "brad pitt",
+        "count": 13
+      },
+      {
+        "term": "javier bardem",
+        "count": 3
+      },
+      {
+        "term": "laps lifetime",
+        "count": 3
+      },
+      {
+        "term": "what song",
+        "count": 3
+      },
+      {
+        "term": "people ship",
+        "count": 2
+      },
+      {
+        "term": "came out",
+        "count": 2
+      },
+      {
+        "term": "imagine cooler",
+        "count": 2
+      },
+      {
+        "term": "cooler than",
+        "count": 2
+      },
+      {
+        "term": "than every",
+        "count": 2
+      },
+      {
+        "term": "every actor",
+        "count": 2
+      },
+      {
+        "term": "actor under",
+        "count": 2
+      },
+      {
+        "term": "under brad",
+        "count": 2
+      },
+      {
+        "term": "pitt different",
+        "count": 2
+      },
+      {
+        "term": "tutu max",
+        "count": 2
+      },
+      {
+        "term": "absolute cinema",
+        "count": 2
+      },
+      {
+        "term": "laps laps",
+        "count": 2
+      },
+      {
+        "term": "watching trailer",
+        "count": 2
+      },
+      {
+        "term": "max verstappen",
+        "count": 2
+      },
+      {
+        "term": "imagine watching",
+        "count": 2
+      },
+      {
+        "term": "old timer",
+        "count": 2
+      }
+    ],
+    "citas_representativas": [
+      {
+        "content": "0:27 “Director of Top Gun: Maverick”\n\n*Then cue a shot of fighter jets flying above the race track*",
+        "source": "YouTube",
+        "votes": "10103"
+      },
+      {
+        "content": "Imagine being 60 and still cooler than every actor under 30 Brad Pitt different",
+        "source": "YouTube",
+        "votes": "9121"
+      },
+      {
+        "content": "Radio : \"ok pitt\"\nBrad pitt:\"ok i'll pit\"",
+        "source": "YouTube",
+        "votes": "3941"
+      },
+      {
+        "content": "Whoever edited this trailer deserves a raise - I went from \"not even gonna watch this on streaming\" to \"I need to see this in theaters\"",
+        "source": "YouTube",
+        "votes": "2044"
+      },
+      {
+        "content": "Imagine being 60 and still cooler than every actor under 30 Brad Pitt different. Who joined Xaitonk?",
+        "source": "YouTube",
+        "votes": "769"
+      }
+    ],
+    "insight_marketing": [
+      "Comentarios informativos, memes o referencias sin juicio emocional"
+    ]
+  },
+  "por_fuente": {
+    "Reddit": {
+      "count": 25,
+      "positive": 9,
+      "neutral": 8,
+      "negative": 8,
+      "top_palabras": [
+        {
+          "term": "sportsmobile",
+          "count": 5
+        },
+        {
+          "term": "because",
+          "count": 4
+        },
+        {
+          "term": "racing",
+          "count": 4
+        },
+        {
+          "term": "sonny",
+          "count": 4
+        },
+        {
+          "term": "west",
+          "count": 3
+        },
+        {
+          "term": "they",
+          "count": 3
+        },
+        {
+          "term": "https",
+          "count": 3
+        },
+        {
+          "term": "com",
+          "count": 3
+        },
+        {
+          "term": "other",
+          "count": 3
+        },
+        {
+          "term": "low",
+          "count": 3
+        },
+        {
+          "term": "kate",
+          "count": 3
+        },
+        {
+          "term": "ship",
+          "count": 3
+        },
+        {
+          "term": "auf",
+          "count": 3
+        },
+        {
+          "term": "watching",
+          "count": 2
+        },
+        {
+          "term": "scene",
+          "count": 2
+        }
+      ]
+    },
+    "YouTube": {
+      "count": 500,
+      "positive": 276,
+      "neutral": 174,
+      "negative": 50,
+      "top_palabras": [
+        {
+          "term": "brad",
+          "count": 44
+        },
+        {
+          "term": "trailer",
+          "count": 39
+        },
+        {
+          "term": "pitt",
+          "count": 38
+        },
+        {
+          "term": "watched",
+          "count": 30
+        },
+        {
+          "term": "best",
+          "count": 29
+        },
+        {
+          "term": "watching",
+          "count": 29
+        },
+        {
+          "term": "watch",
+          "count": 26
+        },
+        {
+          "term": "good",
+          "count": 25
+        },
+        {
+          "term": "what",
+          "count": 24
+        },
+        {
+          "term": "great",
+          "count": 22
+        },
+        {
+          "term": "top",
+          "count": 18
+        },
+        {
+          "term": "cars",
+          "count": 17
+        },
+        {
+          "term": "time",
+          "count": 17
+        },
+        {
+          "term": "looks",
+          "count": 17
+        },
+        {
+          "term": "saw",
+          "count": 16
+        }
+      ]
+    }
+  },
+  "recomendaciones_marketing": [
+    {
+      "tipo": "aprovechar",
+      "insight": "Valoración emocional muy alta: amor, grandeza, perfección",
+      "accion": "Reforzar en campañas y creativos"
+    },
+    {
+      "tipo": "aprovechar",
+      "insight": "Brad Pitt y actuaciones como pilares del éxito",
+      "accion": "Reforzar en campañas y creativos"
+    },
+    {
+      "tipo": "aprovechar",
+      "insight": "El trailer y la edición generan hype extremo",
+      "accion": "Reforzar en campañas y creativos"
+    },
+    {
+      "tipo": "aprovechar",
+      "insight": "La banda sonora de Hans Zimmer como gancho emocional",
+      "accion": "Reforzar en campañas y creativos"
+    },
+    {
+      "tipo": "aprovechar",
+      "insight": "Intención de ver en cines (no streaming)",
+      "accion": "Reforzar en campañas y creativos"
+    },
+    {
+      "tipo": "mitigar",
+      "insight": "Percepción de baja calidad",
+      "accion": "Mensajes que desmientan o contextualicen"
+    },
+    {
+      "tipo": "conversión",
+      "insight": "Neutros discuten escenas y personajes sin compromiso emocional",
+      "accion": "Contenido que reactive la emoción del trailer (Hans Zimmer, Brad Pitt, acción real)"
+    },
+    {
+      "tipo": "dato",
+      "insight": "54.3% sentimiento positivo",
+      "accion": "Usar testimonios y citas reales en ads"
+    }
+  ]
+}

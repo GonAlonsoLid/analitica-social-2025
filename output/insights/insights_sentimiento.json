@@ -1,0 +1,26 @@
+{
+  "total_reviews": 523,
+  "by_label": {
+    "positive": 239,
+    "neutral": 226,
+    "negative": 58
+  },
+  "avg_compound": 0.228,
+  "by_source": {
+    "Reddit": {
+      "count": 25,
+      "positive": 8,
+      "negative": 9,
+      "neutral": 8,
+      "avg_compound": -0.009
+    },
+    "YouTube": {
+      "count": 498,
+      "positive": 231,
+      "negative": 49,
+      "neutral": 218,
+      "avg_compound": 0.24
+    }
+  },
+  "overall_label": "positive"
+}
