@@ -5,22 +5,46 @@ desde IMDB y Rotten Tomatoes
 import json
 import os
 from datetime import datetime
+from typing import Optional
 from scraper_imdb import get_imdb_reviews, save_reviews_to_json as save_imdb
 from scraper_rottentomatoes import get_rottentomatoes_reviews, save_reviews_to_json as save_rt
+from scraper_instagram_steady import (
+    get_instagram_comments,
+    save_comments_to_json as save_instagram,
+    F1_POST_SHORTCODE,
+)
+from scraper_reddit_steady import (
+    get_reddit_comments,
+    save_comments_to_json as save_reddit,
+    F1_SUBREDDIT,
+)
+from scraper_youtube import (
+    get_youtube_comments,
+    save_comments_to_json as save_youtube,
+    F1_VIDEO_ID,
+)
 
 
-def combine_reviews(imdb_reviews: list, rt_reviews: list) -> list:
+def combine_reviews(
+    imdb_reviews: list,
+    rt_reviews: list,
+    instagram_comments: Optional[list] = None,
+    reddit_comments: Optional[list] = None,
+    youtube_comments: Optional[list] = None,
+) -> list:
     """
-    Combina reseñas de ambas fuentes en una sola lista
-    
-    Args:
-        imdb_reviews: Lista de reseñas de IMDB
-        rt_reviews: Lista de reseñas de Rotten Tomatoes
-    
+    Combina reseñas de IMDB, Rotten Tomatoes, Instagram, Reddit y YouTube.
+
     Returns:
-        Lista combinada de todas las reseñas
+        Lista combinada de todas las reseñas/comentarios
     """
     all_reviews = imdb_reviews + rt_reviews
+    if instagram_comments:
+        all_reviews = all_reviews + instagram_comments
+    if reddit_comments:
+        all_reviews = all_reviews + reddit_comments
+    if youtube_comments:
+        all_reviews = all_reviews + youtube_comments
     return all_reviews
 
 
@@ -38,7 +62,10 @@ def save_combined_reviews(reviews: list, filename: str = "reviews_f1_combined.js
         "total_reviews": len(reviews),
         "sources": {
             "IMDB": len([r for r in reviews if r.get("source") == "IMDB"]),
-            "Rotten Tomatoes": len([r for r in reviews if r.get("source") == "Rotten Tomatoes"])
+            "Rotten Tomatoes": len([r for r in reviews if r.get("source") == "Rotten Tomatoes"]),
+            "Instagram": len([r for r in reviews if r.get("source") == "Instagram"]),
+            "Reddit": len([r for r in reviews if r.get("source") == "Reddit"]),
+            "YouTube": len([r for r in reviews if r.get("source") == "YouTube"]),
         },
         "reviews": reviews
     }
@@ -92,9 +119,41 @@ def main():
         save_rt(rt_reviews, "reviews_rottentomatoes.json")
     print()
     
+    # Obtener comentarios de Instagram (requiere STEADYAPI_AUTH_KEY)
+    print("3. Obteniendo comentarios de Instagram (Steady API)...")
+    instagram_comments = get_instagram_comments(post_code=F1_POST_SHORTCODE)
+    
+    if instagram_comments:
+        save_instagram(instagram_comments, "reviews_instagram.json")
+    else:
+        print("  (Omitido: configura STEADYAPI_AUTH_KEY para incluir Instagram)")
+    print()
+
+    # Obtener comentarios de Reddit (Steady API, mismo token que Instagram)
+    print("4. Obteniendo comentarios de Reddit (Steady API)...")
+    reddit_comments = get_reddit_comments(subreddit=F1_SUBREDDIT)
+
+    if reddit_comments:
+        save_reddit(reddit_comments, "reviews_reddit.json")
+    else:
+        print("  (Omitido: configura STEADYAPI_AUTH_KEY para incluir Reddit)")
+    print()
+
+    # Obtener comentarios de YouTube (requiere YOUTUBE_API_KEY)
+    print("5. Obteniendo comentarios de YouTube...")
+    youtube_comments = get_youtube_comments(video_id=F1_VIDEO_ID)
+
+    if youtube_comments:
+        save_youtube(youtube_comments, "reviews_youtube.json")
+    else:
+        print("  (Omitido: configura YOUTUBE_API_KEY para incluir YouTube)")
+    print()
+
     # Combinar y guardar
-    print("3. Combinando reseñas...")
-    all_reviews = combine_reviews(imdb_reviews, rt_reviews)
+    print("6. Combinando reseñas...")
+    all_reviews = combine_reviews(
+        imdb_reviews, rt_reviews, instagram_comments, reddit_comments, youtube_comments
+    )
     
     if all_reviews:
         output = save_combined_reviews(all_reviews)
@@ -106,13 +165,22 @@ def main():
         print("=" * 60)
         print("RESUMEN")
         print("=" * 60)
-        print(f"Total de reseñas obtenidas: {output['total_reviews']}")
+        print(f"Total de reseñas/comentarios obtenidos: {output['total_reviews']}")
         print(f"  - IMDB: {output['sources']['IMDB']}")
         print(f"  - Rotten Tomatoes: {output['sources']['Rotten Tomatoes']}")
+        print(f"  - Instagram: {output['sources']['Instagram']}")
+        print(f"  - Reddit: {output['sources']['Reddit']}")
+        print(f"  - YouTube: {output['sources']['YouTube']}")
         print()
         print("Archivos generados:")
         print("  - reviews_imdb.json")
         print("  - reviews_rottentomatoes.json")
+        if output['sources']['Instagram']:
+            print("  - reviews_instagram.json")
+        if output['sources']['Reddit']:
+            print("  - reviews_reddit.json")
+        if output['sources']['YouTube']:
+            print("  - reviews_youtube.json")
         print("  - reviews_f1_combined.json")
         if os.path.exists("reviews_f1.csv"):
             print("  - reviews_f1.csv")

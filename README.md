@@ -1,6 +1,6 @@
 # Scraper de Reseñas - Película F1 (2025)
 
-Este proyecto permite obtener y almacenar reseñas de la película **F1 (2025)** desde **IMDB** y **Rotten Tomatoes**.
+Este proyecto permite obtener y almacenar reseñas y comentarios sociales de la película **F1 (2025)** desde **IMDB**, **Rotten Tomatoes**, **Instagram**, **Reddit** y **YouTube**.
 
 ## 📋 Requisitos
 
@@ -40,14 +40,55 @@ python scraper_imdb.py
 python scraper_rottentomatoes.py
 ```
 
+**Instagram (Steady API):**
+```bash
+export STEADYAPI_AUTH_KEY='tu_api_key'
+python scraper_instagram_steady.py
+# O con un shortcode específico:
+python scraper_instagram_steady.py CvXyZ123Ab
+```
+
+**Reddit (Steady API):**
+```bash
+export STEADYAPI_AUTH_KEY='tu_api_key'
+python scraper_reddit_steady.py
+# O con otro subreddit:
+python scraper_reddit_steady.py formula1
+```
+
+**YouTube (YouTube Data API v3):**
+```bash
+export YOUTUBE_API_KEY='tu_api_key'
+python scraper_youtube.py
+# O con otra URL o video ID:
+python scraper_youtube.py https://www.youtube.com/watch?v=8yh9BPUBbbQ
+```
+
 ## 📁 Archivos Generados
 
 El script genera los siguientes archivos:
 
 - `reviews_imdb.json` - Reseñas de IMDB
 - `reviews_rottentomatoes.json` - Reseñas de Rotten Tomatoes
-- `reviews_f1_combined.json` - Todas las reseñas combinadas con metadatos
+- `reviews_instagram.json` - Comentarios de Instagram (Steady API)
+- `reviews_reddit.json` - Comentarios de Reddit r/F1movie (Steady API)
+- `reviews_youtube.json` - Comentarios de YouTube (YouTube Data API)
+- `reviews_f1_combined.json` - Todas las reseñas/comentarios combinados
 - `reviews_f1.csv` - Reseñas en formato CSV (si pandas está instalado)
+
+## 📸 Instagram y Reddit con Steady API
+
+Instagram y Reddit usan la **misma API key** de [Steady API](https://steadyapi.com):
+
+1. **Registrarte** en [steadyapi.com/register](https://steadyapi.com/register)
+2. **Generar un token** en Profile → Personal Access Tokens
+3. **Exportar**: `export STEADYAPI_AUTH_KEY='tu_token_aqui'`
+
+**Instagram**: Post por defecto [instagram.com/p/DJ7Kr5XTGtk/](https://www.instagram.com/p/DJ7Kr5XTGtk/). El shortcode está en la URL.
+
+**Reddit**: Subreddit por defecto `r/F1movie`. Puedes cambiar a otro subreddit pasándolo como argumento.
+
+**YouTube**: Usa la [YouTube Data API v3](https://developers.google.com/youtube/v3). Video por defecto: [youtube.com/watch?v=8yh9BPUBbbQ](https://www.youtube.com/watch?v=8yh9BPUBbbQ). Necesitas crear una API key en [Google Cloud Console](https://console.cloud.google.com/) y activar "YouTube Data API v3".
 
 ## 📊 Estructura de Datos
 
@@ -55,13 +96,16 @@ Cada reseña contiene la siguiente información:
 
 ```json
 {
-  "source": "IMDB" o "Rotten Tomatoes",
-  "title": "Título de la reseña",
-  "content": "Contenido completo de la reseña",
-  "rating": "Calificación (número o Fresh/Rotten)",
-  "author": "Autor de la reseña",
+  "source": "IMDB" | "Rotten Tomatoes" | "Instagram" | "Reddit" | "YouTube",
+  "title": "Título (solo IMDB/RT)",
+  "content": "Contenido de la reseña o comentario",
+  "rating": "Calificación (solo IMDB/RT)",
+  "author": "Autor o username",
   "date": "Fecha de publicación",
-  "helpful_votes": "Número de votos útiles"
+  "helpful_votes": "Votos útiles o likes",
+  "post_code": "Shortcode (Instagram)",
+  "subreddit": "Subreddit (Reddit)",
+  "video_id": "ID del video (YouTube)"
 }
 ```
 
