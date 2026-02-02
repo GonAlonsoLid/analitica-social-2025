@@ -17,8 +17,10 @@ from src.scrapers.reddit_steady import (
 )
 from src.scrapers.youtube import (
     get_youtube_comments,
+    get_youtube_comments_from_videos,
     save_comments_to_json as save_youtube,
     F1_VIDEO_ID,
+    F1_VIDEO_IDS,
 )
 
 __all__ = [
@@ -33,6 +35,8 @@ __all__ = [
     "save_reddit",
     "F1_SUBREDDIT",
     "get_youtube_comments",
+    "get_youtube_comments_from_videos",
     "save_youtube",
     "F1_VIDEO_ID",
+    "F1_VIDEO_IDS",
 ]

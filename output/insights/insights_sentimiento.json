@@ -1,26 +1,30 @@
 {
-  "total_reviews": 523,
+  "total_reviews": 1948,
   "by_label": {
-    "positive": 239,
-    "neutral": 226,
-    "negative": 58
+    "positive": 1267,
+    "neutral": 412,
+    "negative": 269
   },
-  "avg_compound": 0.228,
+  "avg_compound": 0.369,
   "by_source": {
-    "Reddit": {
-      "count": 25,
-      "positive": 8,
-      "negative": 9,
-      "neutral": 8,
-      "avg_compound": -0.009
-    },
     "YouTube": {
-      "count": 498,
-      "positive": 231,
-      "negative": 49,
-      "neutral": 218,
-      "avg_compound": 0.24
+      "count": 1948,
+      "positive": 1267,
+      "negative": 269,
+      "neutral": 412,
+      "avg_compound": 0.369
     }
   },
-  "overall_label": "positive"
+  "overall_label": "positive",
+  "engagement": {
+    "total_likes": 132621,
+    "likes_por_sentimiento": {
+      "positive": 42310,
+      "neutral": 59042,
+      "negative": 31269
+    },
+    "avg_compound_ponderado_likes": 0.144,
+    "porcentaje_likes_positivos": 31.9,
+    "interpretacion": "Los comentarios negativos concentran parte relevante del engagement"
+  }
 }

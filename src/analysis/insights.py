@@ -21,29 +21,49 @@ def load_clean_data() -> Dict[str, Any]:
         return json.load(f)
 
 
+def _get_engagement(r: Dict) -> int:
+    """Likes o helpful_votes."""
+    for key in ("likes", "helpful_votes"):
+        v = r.get(key)
+        if v is not None:
+            try:
+                return int(v)
+            except (ValueError, TypeError):
+                pass
+    return 0
+
+
 def basic_insights(data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Genera insights básicos: distribución por fuente, longitud media, etc.
+    Genera insights básicos: distribución por fuente, longitud media, engagement.
     """
     reviews = data.get("reviews", [])
     if not reviews:
         return {"message": "No hay reseñas para analizar"}
 
     by_source = {}
+    engagement_by_source = {}
     for r in reviews:
         src = r.get("source", "Unknown")
         by_source[src] = by_source.get(src, 0) + 1
+        engagement_by_source[src] = engagement_by_source.get(src, 0) + _get_engagement(r)
 
     lengths = [len(str(r.get("content", ""))) for r in reviews if r.get("content")]
     avg_length = sum(lengths) / len(lengths) if lengths else 0
+    total_likes = sum(engagement_by_source.values())
 
-    return {
+    out = {
         "total_reviews": len(reviews),
         "by_source": by_source,
         "avg_content_length": round(avg_length, 1),
         "min_content_length": min(lengths) if lengths else 0,
         "max_content_length": max(lengths) if lengths else 0,
     }
+    if total_likes > 0:
+        out["total_likes"] = total_likes
+        out["likes_por_fuente"] = engagement_by_source
+        out["avg_likes_por_comentario"] = round(total_likes / len(reviews), 1)
+    return out
 
 
 def run_insights_analysis() -> Dict[str, Any]:

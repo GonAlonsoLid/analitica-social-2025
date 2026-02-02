@@ -1,10 +1,9 @@
 {
-  "total_reviews": 523,
+  "total_reviews": 1948,
   "by_source": {
-    "Reddit": 25,
-    "YouTube": 498
+    "YouTube": 1948
   },
-  "avg_content_length": 45.3,
-  "min_content_length": 3,
-  "max_content_length": 344
+  "avg_content_length": 120.3,
+  "min_content_length": 15,
+  "max_content_length": 2731
 }

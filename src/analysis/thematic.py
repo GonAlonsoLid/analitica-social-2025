@@ -14,38 +14,95 @@ from src.analysis.sentiment import analyze_sentiment, label_sentiment, _get_anal
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 OUTPUT_INSIGHTS = PROJECT_ROOT / "output" / "insights"
 
-# Palabras muy genéricas a filtrar en análisis temático (no aportan insight)
+# Palabras a filtrar en análisis temático (contexto películas / reseñas)
 THEMATIC_STOP = {
+    # Artículos, conjunciones, preposiciones
     "the", "this", "that", "and", "but", "for", "with", "from", "was", "are",
     "not", "you", "his", "her", "its", "our", "their", "been", "being",
-    "movie", "film", "like", "get", "one", "really", "even", "still", "also",
-    "just", "know", "think", "going", "see", "want", "make", "way", "say",
+    "like", "get", "one", "really", "even", "still", "also",
+    "just", "know", "think", "going", "want", "make", "way", "say",
     "thing", "things", "something", "anything", "could", "would", "can",
-    "have", "has", "had", "will", "did", "does", "after", "before", "when",
+    "have", "has", "had", "will", "did", "does", "after", "before",
+    # Interrogativos y pronombres relativos (who, how, what... no discriminan)
+    "who", "whom", "whose", "how", "what", "when", "where", "which", "why",
+    # Ruido URLs/off-topic
+    "https", "http", "www", "com", "org", "net", "html", "sportsmobile",
+    "experience", "because", "there", "they", "them", "their", "some",
+    # Contexto cine: verbos de ver + sustantivos genéricos
+    "movie", "film", "films", "movies", "cinema", "theater", "theatre",
+    "watch", "watched", "watching", "watches", "see", "sees", "saw", "seen",
+    "view", "views", "viewed", "viewing", "look", "looks", "looked", "looking",
+    "video", "videos", "clip", "clips",
+    "ver", "vi", "visto", "veo", "mirar", "mirando", "miré", "película", "películas",
+    # Palabras de relleno en comentarios de películas
+    "maybe", "perhaps", "probably", "actually", "basically", "literally",
+    "though", "although", "however", "while", "during", "into", "onto",
+    "here", "then", "than", "too", "so", "much", "many", "most",
+    "mean", "means", "meant", "tell", "tells", "told", "ask", "asked",
+    "qué", "quién", "cómo", "cuándo", "dónde", "cuál", "por qué",
 }
+
+# Bigramas que son referencias a películas/series (no indican sentimiento)
+NEUTRAL_BIGRAMS = {("top", "gun"), ("brad", "pitt"), ("hans", "zimmer")}
 
 MIN_WORD_LEN = 3
 TOP_N_WORDS = 25
 TOP_N_BIGRAMS = 20
-TOP_N_QUOTES = 5  # citas representativas por categoría
+TOP_N_QUOTES = 5
+
+_URL_RE = re.compile(r"https?://\S+|www\.\S+|\b\w+\.(?:com|org|net)\b", re.I)
+_NUMERIC_RE = re.compile(r"^\d+$")
+
+
+def _preprocess_for_tokenize(text: str) -> str:
+    """Quita URLs y fragmentos antes de tokenizar."""
+    if not text or not isinstance(text, str):
+        return ""
+    text = _URL_RE.sub(" ", text)
+    text = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
+    return text
 
 
 def _tokenize(text: str) -> List[str]:
-    """Extrae palabras (min 3 chars) del texto."""
+    """Extrae palabras relevantes (min 3 chars), filtra ruido y URLs."""
     if not text or not isinstance(text, str):
         return []
+    text = _preprocess_for_tokenize(text)
     words = re.findall(r"\b[a-zA-Z]{3,}\b", text.lower())
-    return [w for w in words if w not in THEMATIC_STOP]
+    return [
+        w for w in words
+        if w not in THEMATIC_STOP
+        and not _NUMERIC_RE.match(w)
+        and not w.replace("'", "").isdigit()
+    ]
 
 
 def _bigrams(text: str) -> List[Tuple[str, str]]:
-    """Extrae bigramas del texto."""
+    """Extrae bigramas del texto (excluye ruido conocido)."""
     words = _tokenize(text)
-    return [tuple(words[i:i + 2]) for i in range(len(words) - 1) if len(words) >= 2]
+    bigrams = [tuple(words[i:i + 2]) for i in range(len(words) - 1) if len(words) >= 2]
+    return [bg for bg in bigrams if bg not in NEUTRAL_BIGRAMS or bg in {("brad", "pitt"), ("hans", "zimmer")}]
 
 
 def _repr_bigram(bg: Tuple[str, str]) -> str:
     return " ".join(bg)
+
+
+def _get_engagement(r: Dict) -> int:
+    """Obtiene likes/votos de engagement (YouTube: likes, Reddit: helpful_votes)."""
+    likes = r.get("likes")
+    if likes is not None:
+        try:
+            return int(likes)
+        except (ValueError, TypeError):
+            pass
+    hv = r.get("helpful_votes")
+    if hv is not None:
+        try:
+            return int(hv)
+        except (ValueError, TypeError):
+            pass
+    return 0
 
 
 def run_thematic_analysis() -> Dict[str, Any]:
@@ -73,17 +130,22 @@ def run_thematic_analysis() -> Dict[str, Any]:
         r["sentiment"] = {**scores, "label": label}
         by_label[label].append(r)
 
-    # Frecuencias por categoría
+    # Frecuencias por categoría (raw y ponderada por engagement)
     word_freq: Dict[str, Counter] = {k: Counter() for k in by_label}
     bigram_freq: Dict[str, Counter] = {k: Counter() for k in by_label}
+    word_freq_weighted: Dict[str, Counter] = {k: Counter() for k in by_label}
+    bigram_freq_weighted: Dict[str, Counter] = {k: Counter() for k in by_label}
 
     for label, items in by_label.items():
         for r in items:
             txt = (r.get("content") or "")
+            wgt = 1 + _get_engagement(r)
             for w in _tokenize(txt):
                 word_freq[label][w] += 1
+                word_freq_weighted[label][w] += wgt
             for bg in _bigrams(txt):
                 bigram_freq[label][bg] += 1
+                bigram_freq_weighted[label][bg] += wgt
 
     def top_items(c: Counter, n: int, format_fn=None):
         format_fn = format_fn or (lambda x: x)
@@ -95,26 +157,26 @@ def run_thematic_analysis() -> Dict[str, Any]:
     distinctive_positive = pos_words - neg_words
     distinctive_negative = neg_words - pos_words
 
-    # Citas representativas (con más votos o aleatorias de las más largas)
+    # Citas representativas (ordenadas por engagement/likes)
     def pick_quotes(items: List[Dict], n: int) -> List[Dict]:
-        # Ordenar por helpful_votes si existe, luego por longitud
-        def key(r):
-            hv = r.get("helpful_votes")
-            try:
-                v = int(hv) if hv else 0
-            except (ValueError, TypeError):
-                v = 0
-            return (v, len(str(r.get("content", ""))))
-        sorted_items = sorted(items, key=key, reverse=True)
+        sorted_items = sorted(items, key=lambda r: (_get_engagement(r), len(str(r.get("content", "")))), reverse=True)
         return [
-            {"content": (r.get("content") or "")[:200], "source": r.get("source"), "votes": r.get("helpful_votes")}
+            {"content": (r.get("content") or "")[:200], "source": r.get("source"), "likes": _get_engagement(r)}
             for r in sorted_items[:n]
         ]
+
+    # Engagement: total likes por sentimiento
+    engagement_by_label = {k: sum(_get_engagement(r) for r in items) for k, items in by_label.items()}
+    total_engagement = sum(engagement_by_label.values())
 
     # Interpretación para marketing
     pos_top = [w for w, _ in word_freq["positive"].most_common(TOP_N_WORDS)]
     neg_top = [w for w, _ in word_freq["negative"].most_common(TOP_N_WORDS)]
     neu_top = [w for w, _ in word_freq["neutral"].most_common(TOP_N_WORDS)]
+
+    def top_weighted(c: Counter, n: int, format_fn=None):
+        format_fn = format_fn or (lambda x: x)
+        return [{"term": format_fn(k), "count": int(v)} for k, v in c.most_common(n)]
 
     result = {
         "resumen": {
@@ -123,9 +185,15 @@ def run_thematic_analysis() -> Dict[str, Any]:
             "neutral": len(by_label["neutral"]),
             "negative": len(by_label["negative"]),
             "porcentaje_positivo": round(100 * len(by_label["positive"]) / len(reviews), 1) if reviews else 0,
+            "total_likes": total_engagement,
+            "likes_positivo": engagement_by_label["positive"],
+            "likes_negativo": engagement_by_label["negative"],
+            "likes_neutral": engagement_by_label["neutral"],
+            "porcentaje_engagement_positivo": round(100 * engagement_by_label["positive"] / total_engagement, 1) if total_engagement else 0,
         },
         "por_que_positivo": {
             "palabras_mas_frecuentes": top_items(word_freq["positive"], TOP_N_WORDS),
+            "palabras_con_mas_impacto": top_weighted(word_freq_weighted["positive"], 15),
             "bigramas_recurrentes": top_items(bigram_freq["positive"], TOP_N_BIGRAMS, _repr_bigram),
             "terminos_distintivos_vs_negativo": sorted(distinctive_positive, key=lambda w: word_freq["positive"][w], reverse=True)[:15],
             "citas_representativas": pick_quotes(by_label["positive"], TOP_N_QUOTES),
@@ -133,6 +201,7 @@ def run_thematic_analysis() -> Dict[str, Any]:
         },
         "por_que_negativo": {
             "palabras_mas_frecuentes": top_items(word_freq["negative"], TOP_N_WORDS),
+            "palabras_con_mas_impacto": top_weighted(word_freq_weighted["negative"], 15),
             "bigramas_recurrentes": top_items(bigram_freq["negative"], TOP_N_BIGRAMS, _repr_bigram),
             "terminos_distintivos_vs_positivo": sorted(distinctive_negative, key=lambda w: word_freq["negative"][w], reverse=True)[:15],
             "citas_representativas": pick_quotes(by_label["negative"], TOP_N_QUOTES),
@@ -288,19 +357,30 @@ def _marketing_recommendations(by_label: Dict[str, List[Dict]], result: Dict) ->
         "accion": "Usar testimonios y citas reales en ads" if pct > 40 else "Priorizar campaña de boca-oreja",
     })
 
+    # Engagement: qué resuena con la audiencia
+    pct_eng = res.get("porcentaje_engagement_positivo", 0)
+    if res.get("total_likes", 0) > 0:
+        recs.append({
+            "tipo": "engagement",
+            "insight": f"{pct_eng}% del engagement (likes) va a comentarios positivos",
+            "accion": "Priorizar citas con muchos likes en creativos; la voz positiva tiene más alcance" if pct_eng > 50 else "Cuidar narrativa: comentarios negativos pueden ganar visibilidad",
+        })
+
     return recs
 
 
 def _write_marketing_report(data: Dict) -> None:
     """Escribe reporte legible en Markdown para estrategia de marketing."""
+    res = data["resumen"]
     lines = [
         "# Análisis en profundidad para estrategia de marketing - F1 (2025)",
         "",
         "## Resumen",
-        f"- Total analizado: {data['resumen']['total_analizado']} comentarios",
-        f"- Positivos: {data['resumen']['positive']} ({data['resumen']['porcentaje_positivo']}%)",
-        f"- Neutros: {data['resumen']['neutral']}",
-        f"- Negativos: {data['resumen']['negative']}",
+        f"- Total analizado: {res['total_analizado']} comentarios",
+        f"- Positivos: {res['positive']} ({res['porcentaje_positivo']}%)",
+        f"- Neutros: {res['neutral']} | Negativos: {res['negative']}",
+        f"- **Total likes/engagement:** {res.get('total_likes', 0):,}",
+        f"- **% engagement en positivos:** {res.get('porcentaje_engagement_positivo', 0)}% (lo que más resuena)",
         "",
         "---",
         "",
@@ -311,6 +391,13 @@ def _write_marketing_report(data: Dict) -> None:
     ]
     for x in data["por_que_positivo"]["palabras_mas_frecuentes"][:15]:
         lines.append(f"- **{x['term']}** ({x['count']})")
+    lines.extend([
+        "",
+        "### Palabras con más impacto (ponderadas por likes)",
+        "",
+    ])
+    for x in data["por_que_positivo"].get("palabras_con_mas_impacto", [])[:10]:
+        lines.append(f"- **{x['term']}** (impacto: {x['count']:,})")
     lines.extend([
         "",
         "### Bigramas recurrentes",
@@ -331,7 +418,8 @@ def _write_marketing_report(data: Dict) -> None:
         "",
     ])
     for q in data["por_que_positivo"]["citas_representativas"]:
-        lines.append(f"> \"{q['content'][:150]}...\" — {q.get('source', '')} ({q.get('votes', '')} votes)")
+        likes = q.get("likes", q.get("votes", 0))
+        lines.append(f"> \"{q['content'][:150]}...\" — {q.get('source', '')} ❤️ {likes:,}")
         lines.append("")
     lines.extend([
         "---",
@@ -343,6 +431,10 @@ def _write_marketing_report(data: Dict) -> None:
     ])
     for x in data["por_que_negativo"]["palabras_mas_frecuentes"][:15]:
         lines.append(f"- **{x['term']}** ({x['count']})")
+    if data["por_que_negativo"].get("palabras_con_mas_impacto"):
+        lines.extend(["", "### Palabras negativas con más impacto", ""])
+        for x in data["por_que_negativo"]["palabras_con_mas_impacto"][:8]:
+            lines.append(f"- **{x['term']}** (impacto: {x['count']:,})")
     lines.extend([
         "",
         "### Insights para marketing",

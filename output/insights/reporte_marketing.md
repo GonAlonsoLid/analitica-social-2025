@@ -1,10 +1,11 @@
 # Análisis en profundidad para estrategia de marketing - F1 (2025)
 
 ## Resumen
-- Total analizado: 525 comentarios
-- Positivos: 285 (54.3%)
-- Neutros: 182
-- Negativos: 58
+- Total analizado: 2141 comentarios
+- Positivos: 1365 (63.8%)
+- Neutros: 484 | Negativos: 292
+- **Total likes/engagement:** 133,010
+- **% engagement en positivos:** 31.8% (lo que más resuena)
 
 ---
 
@@ -12,60 +13,68 @@
 
 ### Palabras más repetidas
 
-- **best** (29)
-- **watched** (25)
-- **brad** (25)
-- **good** (24)
-- **great** (19)
-- **pitt** (19)
-- **watching** (18)
-- **watch** (17)
-- **trailer** (16)
-- **movies** (13)
-- **looks** (13)
-- **seen** (12)
-- **theater** (12)
-- **loved** (11)
-- **more** (11)
+- **good** (234)
+- **great** (169)
+- **brad** (148)
+- **pitt** (134)
+- **all** (115)
+- **best** (111)
+- **racing** (109)
+- **loved** (102)
+- **about** (98)
+- **more** (90)
+- **time** (82)
+- **top** (79)
+- **out** (79)
+- **love** (75)
+- **race** (71)
+
+### Palabras con más impacto (ponderadas por likes)
+
+- **love** (impacto: 10,589)
+- **about** (impacto: 8,618)
+- **went** (impacto: 7,018)
+- **hamilton** (impacto: 7,009)
+- **lewis** (impacto: 7,002)
+- **fernando** (impacto: 6,981)
+- **alonso** (impacto: 6,981)
+- **hans** (impacto: 6,392)
+- **score** (impacto: 6,368)
+- **zimmer** (impacto: 6,267)
 
 ### Bigramas recurrentes
 
-- brad pitt (16)
-- hans zimmer (8)
-- score hans (5)
-- hope strategy (4)
-- ever seen (4)
-- watched yesterday (4)
-- looks good (4)
-- original score (3)
-- better than (3)
-- best year (3)
+- brad pitt (112)
+- gun maverick (38)
+- hans zimmer (26)
+- ford ferrari (25)
+- last night (18)
+- tom cruise (16)
+- year old (16)
+- lewis hamilton (14)
+- days thunder (14)
+- drive survive (14)
 
 ### Insights para marketing
 
 - Valoración emocional muy alta: amor, grandeza, perfección
 - Brad Pitt y actuaciones como pilares del éxito
-- El trailer y la edición generan hype extremo
 - La banda sonora de Hans Zimmer como gancho emocional
-- Intención de ver en cines (no streaming)
+- Asociación con Top Gun: Maverick aumenta expectativas
+- Realismo y acción de carreras como valor diferencial
 
 ### Citas representativas (positivas)
 
+> "I love that this is basically a movie about Fernando Alonso and Lewis Hamilton...." — YouTube ❤️ 6,211
+
 > ""Original Score by Hans Zimmer" 
-That's perfect !!!..." — YouTube (3482 votes)
+That's perfect !!!..." — YouTube ❤️ 3,481
 
-> "2:23 original score by hans zimmer.... oh god im seated..." — YouTube (2654 votes)
+> "The logistical effort they went to during production needs to be emphasised, embedding themselves in the real races, creating actual pit garages along..." — YouTube ❤️ 3,434
 
-> "Just saw it, and I LOVED it. This coming from a woman who has zero interest in race cars. It was a phenomenal movie...." — YouTube (1344 votes)
+> "Love that F1 went the Top Gun Maverick route, showing the cool details of race car driving 👏..." — YouTube ❤️ 3,142
 
-> "2:15 cannot get anymore realistic❤..." — YouTube (1196 votes)
-
-> "27 june - F1
-03 july  - jurassic world 
-11 july  - Superman 
-26 july  - Fantastic 4 
- 
-What a incredible months that is..." — YouTube (1168 votes)
+> "2:23 original score by hans zimmer.... oh god im seated..." — YouTube ❤️ 2,656
 
 ---
 
@@ -73,25 +82,36 @@ What a incredible months that is..." — YouTube (1168 votes)
 
 ### Palabras más repetidas
 
-- **top** (10)
-- **gun** (10)
-- **trailer** (9)
-- **time** (5)
-- **brad** (5)
-- **crazy** (4)
-- **made** (4)
-- **watching** (4)
-- **director** (4)
-- **sound** (4)
-- **hits** (4)
-- **insane** (4)
-- **sonny** (3)
-- **life** (3)
-- **racing** (3)
+- **pitt** (27)
+- **brad** (26)
+- **boring** (24)
+- **all** (23)
+- **top** (20)
+- **gun** (20)
+- **time** (20)
+- **good** (19)
+- **drinker** (19)
+- **racing** (18)
+- **don** (17)
+- **about** (16)
+- **only** (14)
+- **were** (14)
+- **motorsport** (14)
+
+### Palabras negativas con más impacto
+
+- **leclerc** (impacto: 13,972)
+- **ferrari** (impacto: 13,499)
+- **must** (impacto: 13,168)
+- **team** (impacto: 13,002)
+- **fake** (impacto: 12,992)
+- **passing** (impacto: 12,992)
+- **water** (impacto: 12,991)
+- **top** (impacto: 11,486)
 
 ### Insights para marketing
 
-- Percepción de baja calidad
+- Valoración negativa explícita
 
 ---
 
@@ -109,31 +129,30 @@ What a incredible months that is..." — YouTube (1168 votes)
 ### [APROVECHAR] Brad Pitt y actuaciones como pilares del éxito
 **Acción:** Reforzar en campañas y creativos
 
-### [APROVECHAR] El trailer y la edición generan hype extremo
-**Acción:** Reforzar en campañas y creativos
-
 ### [APROVECHAR] La banda sonora de Hans Zimmer como gancho emocional
 **Acción:** Reforzar en campañas y creativos
 
-### [APROVECHAR] Intención de ver en cines (no streaming)
+### [APROVECHAR] Asociación con Top Gun: Maverick aumenta expectativas
 **Acción:** Reforzar en campañas y creativos
 
-### [MITIGAR] Percepción de baja calidad
+### [APROVECHAR] Realismo y acción de carreras como valor diferencial
+**Acción:** Reforzar en campañas y creativos
+
+### [MITIGAR] Valoración negativa explícita
 **Acción:** Mensajes que desmientan o contextualicen
 
 ### [CONVERSIÓN] Neutros discuten escenas y personajes sin compromiso emocional
 **Acción:** Contenido que reactive la emoción del trailer (Hans Zimmer, Brad Pitt, acción real)
 
-### [DATO] 54.3% sentimiento positivo
+### [DATO] 63.8% sentimiento positivo
 **Acción:** Usar testimonios y citas reales en ads
+
+### [ENGAGEMENT] 31.8% del engagement (likes) va a comentarios positivos
+**Acción:** Cuidar narrativa: comentarios negativos pueden ganar visibilidad
 
 
 ## Por fuente
 
-### Reddit
-- Total: 25 | Pos: 9 | Neu: 8 | Neg: 8
-- Top palabras: sportsmobile, because, racing, sonny, west, they, https, com
-
 ### YouTube
-- Total: 500 | Pos: 276 | Neu: 174 | Neg: 50
-- Top palabras: brad, trailer, pitt, watched, best, watching, watch, good
+- Total: 2141 | Pos: 1365 | Neu: 484 | Neg: 292
+- Top palabras: good, brad, pitt, great, all, about, racing, more

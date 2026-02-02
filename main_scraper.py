@@ -19,9 +19,9 @@ from src.scrapers import (
     get_reddit_comments,
     save_reddit,
     F1_SUBREDDIT,
-    get_youtube_comments,
+    get_youtube_comments_from_videos,
     save_youtube,
-    F1_VIDEO_ID,
+    F1_VIDEO_IDS,
 )
 
 DATA_DIR = Path(__file__).parent / "data" / "raw"
@@ -85,9 +85,9 @@ def main():
         print("  (Omitido: configura STEADYAPI_AUTH_KEY)")
     print()
 
-    # YouTube
-    print("5. Obteniendo comentarios de YouTube...")
-    youtube_comments = get_youtube_comments(video_id=F1_VIDEO_ID)
+    # YouTube (varios vídeos F1 unificados)
+    print("5. Obteniendo comentarios de YouTube (vídeos F1)...")
+    youtube_comments = get_youtube_comments_from_videos(video_ids=F1_VIDEO_IDS)
     if youtube_comments:
         save_youtube(youtube_comments, str(DATA_DIR / "reviews_youtube.json"))
     else:

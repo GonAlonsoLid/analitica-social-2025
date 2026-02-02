@@ -1,6 +1,29 @@
 """
 Análisis de sentimiento sobre reseñas y comentarios.
-Usa VADER, optimizado para texto de redes sociales en inglés.
+
+¿QUÉ HACE ESTE MÓDULO?
+
+1. Usa VADER (Valence Aware Dictionary and sEntiment Reasoner), un modelo de
+   léxico diseñado para texto de redes sociales (emojis, mayúsculas, "!!!", etc.).
+
+2. Por cada comentario obtiene 4 scores:
+   - neg: proporción de palabras negativas (0-1)
+   - neu: proporción neutras
+   - pos: proporción positivas
+   - compound: score global de -1 (muy negativo) a +1 (muy positivo)
+
+3. Etiqueta cada comentario: positive (compound >= 0.05), negative (<= -0.05),
+   neutral (entre -0.05 y 0.05).
+
+4. Ajuste de léxico para cine: palabras como "insane", "crazy", "fire" que en
+   contexto de películas son positivas se añaden al léxico de VADER.
+
+5. NO se quitan stop words del texto antes del análisis (el pipeline conserva
+   "not", "don't", "no") porque VADER necesita las negaciones para invertir
+   el sentimiento correctamente.
+
+Salida: insights_sentimiento.json (distribución, media por fuente) y
+       reviews_con_sentimiento.json (cada reseña con su score).
 """
 import json
 from pathlib import Path
@@ -16,19 +39,32 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_CLEAN = PROJECT_ROOT / "data" / "clean"
 OUTPUT_INSIGHTS = PROJECT_ROOT / "output" / "insights"
 
-# -1 a 1: negativo a positivo
+# Palabras que en contexto de cine/hype suelen ser positivas (VADER las marca neutras/negativas)
+# Valor típico VADER: 2.x = positivo fuerte, 1.x = positivo suave
+MOVIE_HYPE_LEXICON = {
+    "insane": 2.2, "crazy": 1.8, "wild": 1.5, "fire": 2.0, "hype": 1.8,
+    "hypebeast": 1.0, "goosebumps": 2.0, "chills": 1.5, "seated": 2.0,
+    "phenomenal": 2.5, "incredible": 2.3, "unreal": 2.0, "mental": 1.5,
+}
+
 SENTIMENT_LABELS = {
     "positive": ("compound", 0.05),
     "negative": ("compound", -0.05),
-    "neutral": ("compound", None),  # entre -0.05 y 0.05
+    "neutral": ("compound", None),
 }
+
+_analyzer_instance = None
 
 
 def _get_analyzer():
-    """Obtiene el analizador VADER o None si no está instalado."""
+    """Obtiene el analizador VADER con lexicon ajustado para cine/redes sociales."""
+    global _analyzer_instance
     if not HAS_VADER:
         return None
-    return SentimentIntensityAnalyzer()
+    if _analyzer_instance is None:
+        _analyzer_instance = SentimentIntensityAnalyzer()
+        _analyzer_instance.lexicon.update(MOVIE_HYPE_LEXICON)
+    return _analyzer_instance
 
 
 def analyze_sentiment(text: str, analyzer=None) -> Dict[str, float]:
@@ -71,9 +107,22 @@ def add_sentiment_to_reviews(reviews: List[Dict], analyzer=None) -> List[Dict]:
     return reviews
 
 
+def _get_engagement(r: Dict) -> int:
+    """Likes o helpful_votes para ponderar por engagement."""
+    for key in ("likes", "helpful_votes"):
+        v = r.get(key)
+        if v is not None:
+            try:
+                return int(v)
+            except (ValueError, TypeError):
+                pass
+    return 0
+
+
 def sentiment_insights(data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Genera insights de sentimiento: distribución, media por fuente, etc.
+    Genera insights de sentimiento: distribución, media por fuente,
+    sentimiento ponderado por engagement (likes).
     """
     reviews = data.get("reviews", [])
     if not reviews:
@@ -91,14 +140,21 @@ def sentiment_insights(data: Dict[str, Any]) -> Dict[str, Any]:
     by_label = {"positive": 0, "neutral": 0, "negative": 0}
     compounds = []
     by_source = {}
+    weighted_sum = 0.0
+    weight_total = 0.0
+    engagement_by_label = {"positive": 0, "neutral": 0, "negative": 0}
 
     for r in reviews:
         sent = r.get("sentiment", {})
         label = sent.get("label", "neutral")
         compound = sent.get("compound", 0.0)
+        wgt = 1 + _get_engagement(r)
 
         by_label[label] = by_label.get(label, 0) + 1
         compounds.append(compound)
+        weighted_sum += compound * wgt
+        weight_total += wgt
+        engagement_by_label[label] += _get_engagement(r)
 
         src = r.get("source", "Unknown")
         if src not in by_source:
@@ -114,14 +170,26 @@ def sentiment_insights(data: Dict[str, Any]) -> Dict[str, Any]:
         del vals["compound_sum"]
 
     avg_compound = sum(compounds) / len(compounds) if compounds else 0
+    avg_compound_weighted = weighted_sum / weight_total if weight_total > 0 else avg_compound
+    total_engagement = sum(engagement_by_label.values())
+    pct_eng_pos = round(100 * engagement_by_label["positive"] / total_engagement, 1) if total_engagement else 0
 
-    return {
+    result = {
         "total_reviews": len(reviews),
         "by_label": by_label,
         "avg_compound": round(avg_compound, 3),
         "by_source": by_source,
         "overall_label": label_sentiment(avg_compound),
     }
+    if total_engagement > 0:
+        result["engagement"] = {
+            "total_likes": total_engagement,
+            "likes_por_sentimiento": engagement_by_label,
+            "avg_compound_ponderado_likes": round(avg_compound_weighted, 3),
+            "porcentaje_likes_positivos": pct_eng_pos,
+            "interpretacion": "Sentimiento de los comentarios con más alcance (likes)" if pct_eng_pos > 50 else "Los comentarios negativos concentran parte relevante del engagement",
+        }
+    return result
 
 
 def run_sentiment_analysis() -> Dict[str, Any]:
