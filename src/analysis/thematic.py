@@ -14,33 +14,10 @@ from src.analysis.sentiment import analyze_sentiment, label_sentiment, _get_anal
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 OUTPUT_INSIGHTS = PROJECT_ROOT / "output" / "insights"
 
-# Palabras a filtrar en análisis temático (contexto películas / reseñas)
-THEMATIC_STOP = {
-    # Artículos, conjunciones, preposiciones
-    "the", "this", "that", "and", "but", "for", "with", "from", "was", "are",
-    "not", "you", "his", "her", "its", "our", "their", "been", "being",
-    "like", "get", "one", "really", "even", "still", "also",
-    "just", "know", "think", "going", "want", "make", "way", "say",
-    "thing", "things", "something", "anything", "could", "would", "can",
-    "have", "has", "had", "will", "did", "does", "after", "before",
-    # Interrogativos y pronombres relativos (who, how, what... no discriminan)
-    "who", "whom", "whose", "how", "what", "when", "where", "which", "why",
-    # Ruido URLs/off-topic
-    "https", "http", "www", "com", "org", "net", "html", "sportsmobile",
-    "experience", "because", "there", "they", "them", "their", "some",
-    # Contexto cine: verbos de ver + sustantivos genéricos
-    "movie", "film", "films", "movies", "cinema", "theater", "theatre",
-    "watch", "watched", "watching", "watches", "see", "sees", "saw", "seen",
-    "view", "views", "viewed", "viewing", "look", "looks", "looked", "looking",
-    "video", "videos", "clip", "clips",
-    "ver", "vi", "visto", "veo", "mirar", "mirando", "miré", "película", "películas",
-    # Palabras de relleno en comentarios de películas
-    "maybe", "perhaps", "probably", "actually", "basically", "literally",
-    "though", "although", "however", "while", "during", "into", "onto",
-    "here", "then", "than", "too", "so", "much", "many", "most",
-    "mean", "means", "meant", "tell", "tells", "told", "ask", "asked",
-    "qué", "quién", "cómo", "cuándo", "dónde", "cuál", "por qué",
-}
+from src.analysis.stopwords_social import SOCIAL_STOP_WORDS
+
+# Misma lista que análisis por fuente (word clouds, top words)
+THEMATIC_STOP = SOCIAL_STOP_WORDS
 
 # Bigramas que son referencias a películas/series (no indican sentimiento)
 NEUTRAL_BIGRAMS = {("top", "gun"), ("brad", "pitt"), ("hans", "zimmer")}

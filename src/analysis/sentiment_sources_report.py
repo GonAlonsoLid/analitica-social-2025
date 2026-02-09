@@ -15,18 +15,10 @@ DATA_RAW = PROJECT_ROOT / "data" / "raw"
 OUTPUT_INSIGHTS = PROJECT_ROOT / "output" / "insights"
 FIGURES_DIR = OUTPUT_INSIGHTS / "figures"
 
-# Reutilizar lógica de tokenizado (sin depender de thematic para evitar carga extra)
+from src.analysis.stopwords_social import SOCIAL_STOP_WORDS
+
 _URL_RE = re.compile(r"https?://\S+|www\.\S+|\b\w+\.(?:com|org|net)\b", re.I)
 _NUMERIC_RE = re.compile(r"^\d+$")
-STOP_WORDS = {
-    "the", "this", "that", "and", "but", "for", "with", "from", "was", "are",
-    "not", "you", "his", "her", "its", "our", "their", "been", "being",
-    "like", "get", "one", "really", "even", "still", "also", "just", "know",
-    "think", "going", "want", "make", "way", "say", "thing", "things",
-    "have", "has", "had", "will", "did", "does", "movie", "film", "movies",
-    "watch", "watched", "watching", "see", "seen", "what", "when", "where",
-    "who", "how", "which", "why", "https", "http", "www", "com",
-}
 
 # YouTube: cada video se analiza por separado en gráficas e insights
 YOUTUBE_VIDEO_LABELS = {
@@ -41,7 +33,7 @@ def _tokenize(text: str) -> List[str]:
     text = _URL_RE.sub(" ", text)
     text = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
     words = re.findall(r"\b[a-zA-Z]{3,}\b", text.lower())
-    return [w for w in words if w not in STOP_WORDS and not _NUMERIC_RE.match(w)]
+    return [w for w in words if w not in SOCIAL_STOP_WORDS and not _NUMERIC_RE.match(w)]
 
 
 def _load_data() -> Dict[str, Any]:
