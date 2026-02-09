@@ -10,11 +10,16 @@ from src.scrapers.instagram_steady import (
     save_comments_to_json as save_instagram,
     F1_POST_SHORTCODE,
 )
-from src.scrapers.reddit_steady import (
-    get_reddit_comments,
-    save_comments_to_json as save_reddit,
+from src.scrapers.reddit_steady import save_comments_to_json as save_reddit
+from src.scrapers.reddit_scraper import (
+    get_reddit_comments_scraper,
     F1_SUBREDDIT,
 )
+
+
+def get_reddit_comments(subreddit: str = F1_SUBREDDIT, **kwargs) -> list:
+    """Obtiene comentarios de Reddit por scraping (URLs .json). No requiere API key."""
+    return get_reddit_comments_scraper(subreddit=subreddit, **kwargs)
 from src.scrapers.youtube import (
     get_youtube_comments,
     get_youtube_comments_from_videos,

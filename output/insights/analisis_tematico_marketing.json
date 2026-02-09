@@ -1,139 +1,139 @@
 {
   "resumen": {
-    "total_analizado": 2141,
-    "positive": 1365,
-    "neutral": 484,
-    "negative": 292,
-    "porcentaje_positivo": 63.8,
-    "total_likes": 133010,
-    "likes_positivo": 42355,
-    "likes_negativo": 31298,
-    "likes_neutral": 59357,
-    "porcentaje_engagement_positivo": 31.8
+    "total_analizado": 2258,
+    "positive": 1420,
+    "neutral": 534,
+    "negative": 304,
+    "porcentaje_positivo": 62.9,
+    "total_likes": 133417,
+    "likes_positivo": 42549,
+    "likes_negativo": 31316,
+    "likes_neutral": 59552,
+    "porcentaje_engagement_positivo": 31.9
   },
   "por_que_positivo": {
     "palabras_mas_frecuentes": [
       {
         "term": "good",
-        "count": 234
+        "count": 237
       },
       {
         "term": "great",
-        "count": 169
+        "count": 170
       },
       {
         "term": "brad",
-        "count": 148
+        "count": 155
       },
       {
         "term": "pitt",
-        "count": 134
+        "count": 136
       },
       {
         "term": "all",
-        "count": 115
+        "count": 119
+      },
+      {
+        "term": "racing",
+        "count": 114
       },
       {
         "term": "best",
         "count": 111
       },
       {
-        "term": "racing",
-        "count": 109
-      },
-      {
         "term": "loved",
-        "count": 102
+        "count": 104
       },
       {
         "term": "about",
-        "count": 98
+        "count": 102
       },
       {
         "term": "more",
-        "count": 90
-      },
-      {
-        "term": "time",
-        "count": 82
-      },
-      {
-        "term": "top",
-        "count": 79
+        "count": 94
       },
       {
         "term": "out",
-        "count": 79
+        "count": 88
+      },
+      {
+        "term": "time",
+        "count": 88
+      },
+      {
+        "term": "top",
+        "count": 80
       },
       {
         "term": "love",
-        "count": 75
+        "count": 80
       },
       {
         "term": "race",
-        "count": 71
+        "count": 73
+      },
+      {
+        "term": "fan",
+        "count": 69
       },
       {
         "term": "old",
         "count": 69
       },
       {
-        "term": "fan",
-        "count": 67
-      },
-      {
         "term": "amazing",
-        "count": 66
+        "count": 68
       },
       {
         "term": "very",
-        "count": 66
+        "count": 68
+      },
+      {
+        "term": "made",
+        "count": 67
       },
       {
         "term": "drinker",
         "count": 64
       },
       {
-        "term": "made",
-        "count": 63
+        "term": "cars",
+        "count": 61
       },
       {
-        "term": "cars",
-        "count": 59
+        "term": "were",
+        "count": 61
       },
       {
         "term": "last",
         "count": 59
       },
       {
-        "term": "were",
-        "count": 57
-      },
-      {
-        "term": "year",
-        "count": 56
+        "term": "fun",
+        "count": 58
       }
     ],
     "palabras_con_mas_impacto": [
       {
         "term": "love",
-        "count": 10589
+        "count": 10620
       },
       {
         "term": "about",
-        "count": 8618
+        "count": 8631
+      },
+      {
+        "term": "lewis",
+        "count": 7030
+      },
+      {
+        "term": "hamilton",
+        "count": 7029
       },
       {
         "term": "went",
         "count": 7018
-      },
-      {
-        "term": "hamilton",
-        "count": 7009
-      },
-      {
-        "term": "lewis",
-        "count": 7002
       },
       {
         "term": "fernando",
@@ -161,7 +161,7 @@
       },
       {
         "term": "race",
-        "count": 6037
+        "count": 6047
       },
       {
         "term": "round",
@@ -169,7 +169,7 @@
       },
       {
         "term": "cars",
-        "count": 4613
+        "count": 4627
       },
       {
         "term": "races",
@@ -179,7 +179,7 @@
     "bigramas_recurrentes": [
       {
         "term": "brad pitt",
-        "count": 112
+        "count": 114
       },
       {
         "term": "gun maverick",
@@ -194,12 +194,12 @@
         "count": 25
       },
       {
-        "term": "last night",
+        "term": "tom cruise",
         "count": 18
       },
       {
-        "term": "tom cruise",
-        "count": 16
+        "term": "last night",
+        "count": 18
       },
       {
         "term": "year old",
@@ -207,6 +207,10 @@
       },
       {
         "term": "lewis hamilton",
+        "count": 15
+      },
+      {
+        "term": "sonny hayes",
         "count": 14
       },
       {
@@ -230,6 +234,10 @@
         "count": 13
       },
       {
+        "term": "came out",
+        "count": 12
+      },
+      {
         "term": "grand prix",
         "count": 12
       },
@@ -238,23 +246,15 @@
         "count": 12
       },
       {
-        "term": "sonny hayes",
-        "count": 12
-      },
-      {
-        "term": "came out",
-        "count": 11
-      },
-      {
         "term": "white man",
         "count": 11
       },
       {
-        "term": "best ever",
+        "term": "joseph kosinski",
         "count": 10
       },
       {
-        "term": "cars track",
+        "term": "best ever",
         "count": 10
       }
     ],
@@ -263,17 +263,17 @@
       "best",
       "loved",
       "love",
-      "very",
+      "old",
       "amazing",
-      "made",
+      "very",
       "last",
-      "man",
       "fun",
-      "enjoyed",
+      "man",
       "awesome",
+      "enjoyed",
       "imax",
-      "story",
-      "again"
+      "again",
+      "story"
     ],
     "citas_representativas": [
       {
@@ -349,16 +349,16 @@
         "count": 19
       },
       {
+        "term": "don",
+        "count": 18
+      },
+      {
         "term": "racing",
         "count": 18
       },
       {
-        "term": "don",
-        "count": 17
-      },
-      {
         "term": "about",
-        "count": 16
+        "count": 17
       },
       {
         "term": "only",
@@ -373,12 +373,32 @@
         "count": 14
       },
       {
+        "term": "out",
+        "count": 13
+      },
+      {
         "term": "cars",
         "count": 13
       },
       {
         "term": "race",
         "count": 13
+      },
+      {
+        "term": "bad",
+        "count": 12
+      },
+      {
+        "term": "got",
+        "count": 12
+      },
+      {
+        "term": "shit",
+        "count": 12
+      },
+      {
+        "term": "team",
+        "count": 12
       },
       {
         "term": "didn",
@@ -391,26 +411,6 @@
       {
         "term": "sport",
         "count": 12
-      },
-      {
-        "term": "american",
-        "count": 12
-      },
-      {
-        "term": "out",
-        "count": 12
-      },
-      {
-        "term": "team",
-        "count": 11
-      },
-      {
-        "term": "ferrari",
-        "count": 11
-      },
-      {
-        "term": "now",
-        "count": 11
       }
     ],
     "palabras_con_mas_impacto": [
@@ -428,7 +428,7 @@
       },
       {
         "term": "team",
-        "count": 13002
+        "count": 13004
       },
       {
         "term": "fake",
@@ -472,7 +472,7 @@
       },
       {
         "term": "damn",
-        "count": 2371
+        "count": 2374
       }
     ],
     "bigramas_recurrentes": [
@@ -561,18 +561,18 @@
       "boring",
       "motorsport",
       "sport",
+      "got",
       "american",
-      "round",
-      "ferrari",
       "shit",
-      "team",
-      "done",
-      "any",
-      "back",
-      "hell",
       "bad",
-      "nascar",
-      "least"
+      "team",
+      "round",
+      "any",
+      "done",
+      "ferrari",
+      "damn",
+      "least",
+      "hell"
     ],
     "citas_representativas": [
       {
@@ -617,27 +617,51 @@
       },
       {
         "term": "cars",
-        "count": 20
+        "count": 21
+      },
+      {
+        "term": "trailer",
+        "count": 18
+      },
+      {
+        "term": "car",
+        "count": 18
+      },
+      {
+        "term": "team",
+        "count": 17
       },
       {
         "term": "now",
         "count": 17
       },
       {
-        "term": "trailer",
+        "term": "about",
         "count": 16
       },
       {
-        "term": "about",
+        "term": "made",
         "count": 15
       },
       {
-        "term": "team",
-        "count": 13
+        "term": "more",
+        "count": 15
+      },
+      {
+        "term": "time",
+        "count": 14
       },
       {
         "term": "driven",
         "count": 13
+      },
+      {
+        "term": "drive",
+        "count": 12
+      },
+      {
+        "term": "all",
+        "count": 12
       },
       {
         "term": "need",
@@ -648,27 +672,15 @@
         "count": 12
       },
       {
-        "term": "time",
-        "count": 12
-      },
-      {
-        "term": "more",
-        "count": 12
-      },
-      {
-        "term": "made",
-        "count": 12
-      },
-      {
         "term": "black",
         "count": 12
       },
       {
-        "term": "all",
+        "term": "sonny",
         "count": 11
       },
       {
-        "term": "drive",
+        "term": "formula",
         "count": 11
       },
       {
@@ -676,35 +688,23 @@
         "count": 11
       },
       {
+        "term": "out",
+        "count": 10
+      },
+      {
         "term": "right",
         "count": 10
       },
       {
+        "term": "imax",
+        "count": 9
+      },
+      {
+        "term": "story",
+        "count": 9
+      },
+      {
         "term": "box",
-        "count": 9
-      },
-      {
-        "term": "old",
-        "count": 9
-      },
-      {
-        "term": "formula",
-        "count": 9
-      },
-      {
-        "term": "out",
-        "count": 9
-      },
-      {
-        "term": "should",
-        "count": 9
-      },
-      {
-        "term": "stallone",
-        "count": 9
-      },
-      {
-        "term": "drinker",
         "count": 9
       }
     ],
@@ -726,11 +726,11 @@
         "count": 6
       },
       {
-        "term": "max verstappen",
-        "count": 4
+        "term": "first time",
+        "count": 5
       },
       {
-        "term": "first time",
+        "term": "max verstappen",
         "count": 4
       },
       {
@@ -774,19 +774,19 @@
         "count": 3
       },
       {
-        "term": "radio box",
+        "term": "pitts character",
         "count": 2
       },
       {
-        "term": "box box",
+        "term": "sonny hayes",
         "count": 2
       },
       {
-        "term": "box brad",
+        "term": "made edit",
         "count": 2
       },
       {
-        "term": "brad box",
+        "term": "blu ray",
         "count": 2
       }
     ],
@@ -818,10 +818,79 @@
       }
     ],
     "insight_marketing": [
+      "Debate sobre personajes o relaciones",
       "Comentarios informativos, memes o referencias sin juicio emocional"
     ]
   },
   "por_fuente": {
+    "Reddit": {
+      "count": 117,
+      "positive": 55,
+      "neutral": 50,
+      "negative": 12,
+      "top_palabras": [
+        {
+          "term": "sonny",
+          "count": 25
+        },
+        {
+          "term": "she",
+          "count": 14
+        },
+        {
+          "term": "sequel",
+          "count": 13
+        },
+        {
+          "term": "car",
+          "count": 12
+        },
+        {
+          "term": "out",
+          "count": 11
+        },
+        {
+          "term": "kate",
+          "count": 10
+        },
+        {
+          "term": "other",
+          "count": 9
+        },
+        {
+          "term": "team",
+          "count": 9
+        },
+        {
+          "term": "any",
+          "count": 9
+        },
+        {
+          "term": "end",
+          "count": 8
+        },
+        {
+          "term": "time",
+          "count": 8
+        },
+        {
+          "term": "made",
+          "count": 8
+        },
+        {
+          "term": "apx",
+          "count": 8
+        },
+        {
+          "term": "official",
+          "count": 7
+        },
+        {
+          "term": "imax",
+          "count": 7
+        }
+      ]
+    },
     "YouTube": {
       "count": 2141,
       "positive": 1365,
@@ -929,12 +998,12 @@
     },
     {
       "tipo": "dato",
-      "insight": "63.8% sentimiento positivo",
+      "insight": "62.9% sentimiento positivo",
       "accion": "Usar testimonios y citas reales en ads"
     },
     {
       "tipo": "engagement",
-      "insight": "31.8% del engagement (likes) va a comentarios positivos",
+      "insight": "31.9% del engagement (likes) va a comentarios positivos",
       "accion": "Cuidar narrativa: comentarios negativos pueden ganar visibilidad"
     }
   ]

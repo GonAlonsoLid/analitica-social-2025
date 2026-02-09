@@ -1,11 +1,11 @@
 # Análisis en profundidad para estrategia de marketing - F1 (2025)
 
 ## Resumen
-- Total analizado: 2141 comentarios
-- Positivos: 1365 (63.8%)
-- Neutros: 484 | Negativos: 292
-- **Total likes/engagement:** 133,010
-- **% engagement en positivos:** 31.8% (lo que más resuena)
+- Total analizado: 2258 comentarios
+- Positivos: 1420 (62.9%)
+- Neutros: 534 | Negativos: 304
+- **Total likes/engagement:** 133,417
+- **% engagement en positivos:** 31.9% (lo que más resuena)
 
 ---
 
@@ -13,29 +13,29 @@
 
 ### Palabras más repetidas
 
-- **good** (234)
-- **great** (169)
-- **brad** (148)
-- **pitt** (134)
-- **all** (115)
+- **good** (237)
+- **great** (170)
+- **brad** (155)
+- **pitt** (136)
+- **all** (119)
+- **racing** (114)
 - **best** (111)
-- **racing** (109)
-- **loved** (102)
-- **about** (98)
-- **more** (90)
-- **time** (82)
-- **top** (79)
-- **out** (79)
-- **love** (75)
-- **race** (71)
+- **loved** (104)
+- **about** (102)
+- **more** (94)
+- **out** (88)
+- **time** (88)
+- **top** (80)
+- **love** (80)
+- **race** (73)
 
 ### Palabras con más impacto (ponderadas por likes)
 
-- **love** (impacto: 10,589)
-- **about** (impacto: 8,618)
+- **love** (impacto: 10,620)
+- **about** (impacto: 8,631)
+- **lewis** (impacto: 7,030)
+- **hamilton** (impacto: 7,029)
 - **went** (impacto: 7,018)
-- **hamilton** (impacto: 7,009)
-- **lewis** (impacto: 7,002)
 - **fernando** (impacto: 6,981)
 - **alonso** (impacto: 6,981)
 - **hans** (impacto: 6,392)
@@ -44,16 +44,16 @@
 
 ### Bigramas recurrentes
 
-- brad pitt (112)
+- brad pitt (114)
 - gun maverick (38)
 - hans zimmer (26)
 - ford ferrari (25)
+- tom cruise (18)
 - last night (18)
-- tom cruise (16)
 - year old (16)
-- lewis hamilton (14)
+- lewis hamilton (15)
+- sonny hayes (14)
 - days thunder (14)
-- drive survive (14)
 
 ### Insights para marketing
 
@@ -91,9 +91,9 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 - **time** (20)
 - **good** (19)
 - **drinker** (19)
+- **don** (18)
 - **racing** (18)
-- **don** (17)
-- **about** (16)
+- **about** (17)
 - **only** (14)
 - **were** (14)
 - **motorsport** (14)
@@ -103,7 +103,7 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 - **leclerc** (impacto: 13,972)
 - **ferrari** (impacto: 13,499)
 - **must** (impacto: 13,168)
-- **team** (impacto: 13,002)
+- **team** (impacto: 13,004)
 - **fake** (impacto: 12,992)
 - **passing** (impacto: 12,992)
 - **water** (impacto: 12,991)
@@ -117,6 +117,7 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 
 ## Por qué es NEUTRAL
 
+- Debate sobre personajes o relaciones
 - Comentarios informativos, memes o referencias sin juicio emocional
 
 ---
@@ -144,14 +145,18 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 ### [CONVERSIÓN] Neutros discuten escenas y personajes sin compromiso emocional
 **Acción:** Contenido que reactive la emoción del trailer (Hans Zimmer, Brad Pitt, acción real)
 
-### [DATO] 63.8% sentimiento positivo
+### [DATO] 62.9% sentimiento positivo
 **Acción:** Usar testimonios y citas reales en ads
 
-### [ENGAGEMENT] 31.8% del engagement (likes) va a comentarios positivos
+### [ENGAGEMENT] 31.9% del engagement (likes) va a comentarios positivos
 **Acción:** Cuidar narrativa: comentarios negativos pueden ganar visibilidad
 
 
 ## Por fuente
+
+### Reddit
+- Total: 117 | Pos: 55 | Neu: 50 | Neg: 12
+- Top palabras: sonny, she, sequel, car, out, kate, other, team
 
 ### YouTube
 - Total: 2141 | Pos: 1365 | Neu: 484 | Neg: 292
