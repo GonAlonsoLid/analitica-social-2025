@@ -12,20 +12,20 @@
 - Sentimiento medio (compound): **0.247** (comparable entre fuentes)
 - Etiqueta dominante: **positive**
 - Distribución **normalizada (%):** Positivo 50.5%, Neutral 39.8%, Negativo 9.7%
-- Engagement total: **391** | **Por reseña (normalizado):** 3.8
+- Engagement total: **386** | **Por reseña (normalizado):** 3.7
 
 **Palabras más frecuentes (por 100 reseñas, comparable entre fuentes):**
 
-- sonny (111.7 por 100 reseñas)
+- sonny (118.4 por 100 reseñas)
 - brad (101.9 por 100 reseñas)
 - shot (84.5 por 100 reseñas)
 - apx (78.6 por 100 reseñas)
-- can (72.8 por 100 reseñas)
-- sequel (69.9 por 100 reseñas)
+- sequel (71.8 por 100 reseñas)
 - tom (69.9 por 100 reseñas)
-- real (64.1 por 100 reseñas)
-- first (64.1 por 100 reseñas)
 - scene (63.1 por 100 reseñas)
+- time (58.3 por 100 reseñas)
+- people (53.4 por 100 reseñas)
+- imax (53.4 por 100 reseñas)
 
 ### YouTube - Trailer
 - Número de reseñas: **912**
@@ -38,14 +38,14 @@
 
 - brad (4809.6 por 100 reseñas)
 - box (3753.4 por 100 reseñas)
-- leclerc (3494.1 por 100 reseñas)
 - ferrari (3452.7 por 100 reseñas)
-- then (3068.5 por 100 reseñas)
 - pitt (2029.8 por 100 reseñas)
 - faster (1958.2 por 100 reseñas)
 - checking (1957.7 por 100 reseñas)
 - radio (1683.6 por 100 reseñas)
 - must (1449.5 por 100 reseñas)
+- team (1427.6 por 100 reseñas)
+- passing (1424.8 por 100 reseñas)
 
 ### YouTube - Video 2
 - Número de reseñas: **1036**
@@ -64,8 +64,8 @@
 - went (676.9 por 100 reseñas)
 - round (631.9 por 100 reseñas)
 - much (517.4 por 100 reseñas)
-- they (485.6 por 100 reseñas)
-- can (469.3 por 100 reseñas)
+- race (451.2 por 100 reseñas)
+- races (442.6 por 100 reseñas)
 
 ## Gráficas generadas
 
@@ -77,6 +77,11 @@
 - `figures/wordcloud_*.png` – Nube de palabras por fuente
 - `figures/wordcloud_global_positive.png` – Palabras en comentarios positivos (todas las fuentes)
 - `figures/wordcloud_global_negative.png` – Palabras en comentarios negativos (todas las fuentes)
+- `figures/wordcloud_global_bigrams.png` – Bigramas más frecuentes (pares de palabras)
+
+**Notas sobre los wordclouds:**
+- Las palabras se filtran con una lista de stopwords (EN/ES + cine); palabras como *about* no deberían aparecer; si ves alguna, puede ser de una ejecución anterior.
+- El wordcloud **negativo** muestra palabras que aparecen en *comentarios* etiquetados como negativos por VADER, no palabras «negativas» en sí. Por ejemplo, *leclerc* puede salir ahí porque aparece en comentarios que el modelo puntuó como negativos (críticas, discusiones, etc.).
 
 ## Recomendaciones para estrategia de marketing
 

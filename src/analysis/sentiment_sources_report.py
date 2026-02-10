@@ -28,12 +28,20 @@ YOUTUBE_VIDEO_LABELS = {
 
 
 def _tokenize(text: str) -> List[str]:
+    """Tokeniza texto: palabras ≥3 letras, sin URLs, sin stopwords (EN/ES/cine).
+    Palabras como 'about' están en SOCIAL_STOP_WORDS y no deberían aparecer en wordclouds."""
     if not text or not isinstance(text, str):
         return []
     text = _URL_RE.sub(" ", text)
     text = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
     words = re.findall(r"\b[a-zA-Z]{3,}\b", text.lower())
     return [w for w in words if w not in SOCIAL_STOP_WORDS and not _NUMERIC_RE.match(w)]
+
+
+def _bigrams(text: str) -> List[str]:
+    """Extrae bigramas (pares de palabras consecutivas) como 'palabra1 palabra2'."""
+    words = _tokenize(text)
+    return [f"{words[i]} {words[i+1]}" for i in range(len(words) - 1)]
 
 
 def _load_data() -> Dict[str, Any]:
@@ -214,6 +222,7 @@ def plot_avg_compound_by_source(by_source: Dict[str, Dict], output_path: Path) -
     ax.axhline(y=-0.05, color="red", linestyle="--", alpha=0.5, label="Umbral negativo")
     ax.set_ylabel("Compound medio (-1 a 1)")
     ax.set_title("Sentimiento medio por fuente (VADER)")
+    ax.set_xticks(range(len(sources)))
     ax.set_xticklabels(sources, rotation=15, ha="right")
     ax.legend(loc="upper right", fontsize=8)
     fig.tight_layout()
@@ -303,7 +312,10 @@ def plot_wordcloud_per_source(by_source: Dict[str, Dict], output_dir: Path) -> N
 
 
 def plot_wordcloud_by_sentiment(full_data: Dict[str, Any], output_dir: Path) -> None:
-    """Word clouds globales: palabras en comentarios positivos vs negativos (todas las fuentes)."""
+    """Word clouds globales: palabras en comentarios positivos vs negativos (todas las fuentes).
+    Nota: el wordcloud 'negativo' muestra palabras que aparecen en comentarios etiquetados como
+    negativos por VADER (compound <= -0.05), no palabras con carga negativa en sí. Por ejemplo
+    'leclerc' puede salir en negativos porque aparece en comentarios que critican o discuten algo negativo."""
     try:
         from wordcloud import WordCloud
     except ImportError:
@@ -347,6 +359,46 @@ def plot_wordcloud_by_sentiment(full_data: Dict[str, Any], output_dir: Path) -> 
         plt.close()
 
 
+def plot_wordcloud_bigrams(full_data: Dict[str, Any], output_dir: Path) -> None:
+    """Word cloud global de bigramas (pares de palabras consecutivas) sobre todas las reseñas.
+    Siempre guarda un PNG en output_dir/wordcloud_global_bigrams.png (con mensaje si no hay datos)."""
+    try:
+        from wordcloud import WordCloud
+    except ImportError:
+        return
+    import matplotlib.pyplot as plt
+
+    reviews = full_data.get("reviews", [])
+    bigram_freq: Counter = Counter()
+    for r in reviews:
+        content = (r.get("content") or "").strip()
+        if not content:
+            continue
+        wgt = 1 + _get_engagement(r)
+        for bg in _bigrams(content):
+            bigram_freq[bg] += wgt
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    if not bigram_freq:
+        ax.text(0.5, 0.5, "No hay suficientes bigramas\npara mostrar", ha="center", va="center", fontsize=14)
+        ax.axis("off")
+        ax.set_title("Bigramas más frecuentes (todas las fuentes)")
+    else:
+        wc = WordCloud(
+            width=800,
+            height=400,
+            background_color="white",
+            max_words=50,
+            colormap="viridis",
+        ).generate_from_frequencies(dict(bigram_freq.most_common(80)))
+        ax.imshow(wc, interpolation="bilinear")
+        ax.axis("off")
+        ax.set_title("Bigramas más frecuentes (todas las fuentes)")
+    fig.tight_layout()
+    fig.savefig(output_dir / "wordcloud_global_bigrams.png", dpi=150, bbox_inches="tight")
+    plt.close()
+
+
 def plot_compound_boxplot_by_source(by_source: Dict[str, Dict], full_data: Dict[str, Any], output_path: Path) -> None:
     """Boxplot: distribución del compound por fuente (usa sentimiento ya calculado)."""
     import matplotlib.pyplot as plt
@@ -366,7 +418,7 @@ def plot_compound_boxplot_by_source(by_source: Dict[str, Dict], full_data: Dict[
     fig, ax = plt.subplots(figsize=(10, 5))
     data = [by_src_lists[s] for s in by_src_lists]
     labels = list(by_src_lists.keys())
-    bp = ax.boxplot(data, labels=labels, patch_artist=True)
+    bp = ax.boxplot(data, tick_labels=labels, patch_artist=True)
     for patch in bp["boxes"]:
         patch.set_facecolor("#ecf0f1")
     ax.axhline(y=0.05, color="green", linestyle="--", alpha=0.5)
@@ -422,6 +474,11 @@ def write_marketing_insights_report(insights: Dict[str, Any], output_path: Path)
         "- `figures/wordcloud_*.png` – Nube de palabras por fuente",
         "- `figures/wordcloud_global_positive.png` – Palabras en comentarios positivos (todas las fuentes)",
         "- `figures/wordcloud_global_negative.png` – Palabras en comentarios negativos (todas las fuentes)",
+        "- `figures/wordcloud_global_bigrams.png` – Bigramas más frecuentes (pares de palabras)",
+        "",
+        "**Notas sobre los wordclouds:**",
+        "- Las palabras se filtran con una lista de stopwords (EN/ES + cine); palabras como *about* no deberían aparecer; si ves alguna, puede ser de una ejecución anterior.",
+        "- El wordcloud **negativo** muestra palabras que aparecen en *comentarios* etiquetados como negativos por VADER, no palabras «negativas» en sí. Por ejemplo, *leclerc* puede salir ahí porque aparece en comentarios que el modelo puntuó como negativos (críticas, discusiones, etc.).",
         "",
         "## Recomendaciones para estrategia de marketing",
         "",
@@ -466,8 +523,15 @@ def run_full_report() -> Dict[str, Any]:
     plot_engagement_by_source(by_source, FIGURES_DIR / "engagement_by_source.png")
     plot_top_words_by_source(by_source, FIGURES_DIR / "top_words_by_source.png")
     plot_compound_boxplot_by_source(by_source, data, FIGURES_DIR / "compound_boxplot_by_source.png")
-    plot_wordcloud_per_source(by_source, FIGURES_DIR)
-    plot_wordcloud_by_sentiment(data, FIGURES_DIR)
+    try:
+        from wordcloud import WordCloud  # noqa: F401
+    except ImportError:
+        print("[AVISO] La librería 'wordcloud' no está instalada. No se generan nubes de palabras.")
+        print("        Instálala con: pip install wordcloud")
+    else:
+        plot_wordcloud_per_source(by_source, FIGURES_DIR)
+        plot_wordcloud_by_sentiment(data, FIGURES_DIR)
+        plot_wordcloud_bigrams(data, FIGURES_DIR)
     print(f"[OK] Graficas guardadas en {FIGURES_DIR}")
 
     # Reporte marketing

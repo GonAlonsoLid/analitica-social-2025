@@ -5,10 +5,10 @@
     "neutral": 534,
     "negative": 304,
     "porcentaje_positivo": 62.9,
-    "total_likes": 133417,
-    "likes_positivo": 42549,
-    "likes_negativo": 31316,
-    "likes_neutral": 59552,
+    "total_likes": 133412,
+    "likes_positivo": 42550,
+    "likes_negativo": 31314,
+    "likes_neutral": 59548,
     "porcentaje_engagement_positivo": 31.9
   },
   "por_que_positivo": {
@@ -30,10 +30,6 @@
         "count": 136
       },
       {
-        "term": "all",
-        "count": 119
-      },
-      {
         "term": "racing",
         "count": 114
       },
@@ -46,20 +42,12 @@
         "count": 104
       },
       {
-        "term": "about",
-        "count": 102
-      },
-      {
-        "term": "more",
-        "count": 94
-      },
-      {
-        "term": "out",
-        "count": 88
-      },
-      {
         "term": "time",
         "count": 88
+      },
+      {
+        "term": "much",
+        "count": 82
       },
       {
         "term": "top",
@@ -78,20 +66,8 @@
         "count": 69
       },
       {
-        "term": "old",
-        "count": 69
-      },
-      {
         "term": "amazing",
         "count": 68
-      },
-      {
-        "term": "very",
-        "count": 68
-      },
-      {
-        "term": "made",
-        "count": 67
       },
       {
         "term": "drinker",
@@ -102,34 +78,54 @@
         "count": 61
       },
       {
-        "term": "were",
-        "count": 61
-      },
-      {
-        "term": "last",
-        "count": 59
-      },
-      {
         "term": "fun",
         "count": 58
+      },
+      {
+        "term": "year",
+        "count": 57
+      },
+      {
+        "term": "man",
+        "count": 57
+      },
+      {
+        "term": "gun",
+        "count": 56
+      },
+      {
+        "term": "maverick",
+        "count": 55
+      },
+      {
+        "term": "didn",
+        "count": 54
+      },
+      {
+        "term": "awesome",
+        "count": 54
+      },
+      {
+        "term": "enjoyed",
+        "count": 54
+      },
+      {
+        "term": "car",
+        "count": 53
       }
     ],
     "palabras_con_mas_impacto": [
       {
         "term": "love",
-        "count": 10620
-      },
-      {
-        "term": "about",
-        "count": 8631
+        "count": 10619
       },
       {
         "term": "lewis",
-        "count": 7030
+        "count": 7029
       },
       {
         "term": "hamilton",
-        "count": 7029
+        "count": 7028
       },
       {
         "term": "went",
@@ -142,6 +138,10 @@
       {
         "term": "alonso",
         "count": 6981
+      },
+      {
+        "term": "much",
+        "count": 6849
       },
       {
         "term": "hans",
@@ -169,7 +169,7 @@
       },
       {
         "term": "cars",
-        "count": 4627
+        "count": 4626
       },
       {
         "term": "races",
@@ -198,19 +198,15 @@
         "count": 18
       },
       {
-        "term": "last night",
-        "count": 18
-      },
-      {
-        "term": "year old",
-        "count": 16
-      },
-      {
         "term": "lewis hamilton",
         "count": 15
       },
       {
         "term": "sonny hayes",
+        "count": 14
+      },
+      {
+        "term": "best ever",
         "count": 14
       },
       {
@@ -226,23 +222,7 @@
         "count": 13
       },
       {
-        "term": "long time",
-        "count": 13
-      },
-      {
-        "term": "very good",
-        "count": 13
-      },
-      {
-        "term": "came out",
-        "count": 12
-      },
-      {
         "term": "grand prix",
-        "count": 12
-      },
-      {
-        "term": "big screen",
         "count": 12
       },
       {
@@ -254,8 +234,28 @@
         "count": 10
       },
       {
-        "term": "best ever",
+        "term": "cars track",
         "count": 10
+      },
+      {
+        "term": "black man",
+        "count": 10
+      },
+      {
+        "term": "kerry condon",
+        "count": 9
+      },
+      {
+        "term": "javier bardem",
+        "count": 9
+      },
+      {
+        "term": "absolutely loved",
+        "count": 9
+      },
+      {
+        "term": "round round",
+        "count": 9
       }
     ],
     "terminos_distintivos_vs_negativo": [
@@ -263,17 +263,17 @@
       "best",
       "loved",
       "love",
-      "old",
       "amazing",
-      "very",
-      "last",
       "fun",
       "man",
       "awesome",
       "enjoyed",
-      "imax",
       "again",
-      "story"
+      "imax",
+      "sonny",
+      "story",
+      "better",
+      "years"
     ],
     "citas_representativas": [
       {
@@ -325,10 +325,6 @@
         "count": 24
       },
       {
-        "term": "all",
-        "count": 23
-      },
-      {
         "term": "top",
         "count": 20
       },
@@ -357,24 +353,12 @@
         "count": 18
       },
       {
-        "term": "about",
-        "count": 17
-      },
-      {
-        "term": "only",
-        "count": 14
-      },
-      {
-        "term": "were",
-        "count": 14
+        "term": "much",
+        "count": 15
       },
       {
         "term": "motorsport",
         "count": 14
-      },
-      {
-        "term": "out",
-        "count": 13
       },
       {
         "term": "cars",
@@ -386,10 +370,6 @@
       },
       {
         "term": "bad",
-        "count": 12
-      },
-      {
-        "term": "got",
         "count": 12
       },
       {
@@ -405,12 +385,32 @@
         "count": 12
       },
       {
-        "term": "more",
+        "term": "sport",
         "count": 12
       },
       {
-        "term": "sport",
+        "term": "american",
         "count": 12
+      },
+      {
+        "term": "ferrari",
+        "count": 11
+      },
+      {
+        "term": "fan",
+        "count": 11
+      },
+      {
+        "term": "done",
+        "count": 11
+      },
+      {
+        "term": "round",
+        "count": 11
+      },
+      {
+        "term": "damn",
+        "count": 10
       }
     ],
     "palabras_con_mas_impacto": [
@@ -463,16 +463,16 @@
         "count": 9124
       },
       {
-        "term": "trailer",
-        "count": 4776
-      },
-      {
-        "term": "old",
-        "count": 2383
-      },
-      {
         "term": "damn",
         "count": 2374
+      },
+      {
+        "term": "year",
+        "count": 2357
+      },
+      {
+        "term": "bruckheimer",
+        "count": 2345
       }
     ],
     "bigramas_recurrentes": [
@@ -483,10 +483,6 @@
       {
         "term": "gun maverick",
         "count": 9
-      },
-      {
-        "term": "year old",
-        "count": 8
       },
       {
         "term": "least exciting",
@@ -503,10 +499,6 @@
       {
         "term": "ford ferrari",
         "count": 6
-      },
-      {
-        "term": "every single",
-        "count": 5
       },
       {
         "term": "round round",
@@ -545,34 +537,42 @@
         "count": 4
       },
       {
-        "term": "first time",
-        "count": 3
-      },
-      {
         "term": "rough tumble",
         "count": 3
       },
       {
         "term": "single ever",
         "count": 3
+      },
+      {
+        "term": "ever done",
+        "count": 3
+      },
+      {
+        "term": "year driver",
+        "count": 3
+      },
+      {
+        "term": "american drivers",
+        "count": 3
       }
     ],
     "terminos_distintivos_vs_positivo": [
       "boring",
       "motorsport",
-      "sport",
-      "got",
+      "bad",
       "american",
       "shit",
-      "bad",
-      "team",
       "round",
-      "any",
-      "done",
-      "ferrari",
-      "damn",
+      "nascar",
+      "hell",
       "least",
-      "hell"
+      "damn",
+      "director",
+      "exciting",
+      "point",
+      "off",
+      "character"
     ],
     "citas_representativas": [
       {
@@ -620,32 +620,12 @@
         "count": 21
       },
       {
-        "term": "trailer",
-        "count": 18
-      },
-      {
         "term": "car",
         "count": 18
       },
       {
         "term": "team",
         "count": 17
-      },
-      {
-        "term": "now",
-        "count": 17
-      },
-      {
-        "term": "about",
-        "count": 16
-      },
-      {
-        "term": "made",
-        "count": 15
-      },
-      {
-        "term": "more",
-        "count": 15
       },
       {
         "term": "time",
@@ -657,10 +637,6 @@
       },
       {
         "term": "drive",
-        "count": 12
-      },
-      {
-        "term": "all",
         "count": 12
       },
       {
@@ -688,14 +664,6 @@
         "count": 11
       },
       {
-        "term": "out",
-        "count": 10
-      },
-      {
-        "term": "right",
-        "count": 10
-      },
-      {
         "term": "imax",
         "count": 9
       },
@@ -706,6 +674,38 @@
       {
         "term": "box",
         "count": 9
+      },
+      {
+        "term": "stallone",
+        "count": 9
+      },
+      {
+        "term": "drinker",
+        "count": 9
+      },
+      {
+        "term": "wait",
+        "count": 8
+      },
+      {
+        "term": "years",
+        "count": 8
+      },
+      {
+        "term": "grilled",
+        "count": 8
+      },
+      {
+        "term": "cheese",
+        "count": 8
+      },
+      {
+        "term": "rush",
+        "count": 8
+      },
+      {
+        "term": "song",
+        "count": 7
       }
     ],
     "bigramas_recurrentes": [
@@ -726,12 +726,12 @@
         "count": 6
       },
       {
-        "term": "first time",
-        "count": 5
-      },
-      {
         "term": "max verstappen",
         "count": 4
+      },
+      {
+        "term": "pitt different",
+        "count": 3
       },
       {
         "term": "javier bardem",
@@ -742,15 +742,7 @@
         "count": 3
       },
       {
-        "term": "years old",
-        "count": 3
-      },
-      {
         "term": "tom cruise",
-        "count": 3
-      },
-      {
-        "term": "real life",
         "count": 3
       },
       {
@@ -766,10 +758,6 @@
         "count": 3
       },
       {
-        "term": "now need",
-        "count": 3
-      },
-      {
         "term": "black driver",
         "count": 3
       },
@@ -782,11 +770,23 @@
         "count": 2
       },
       {
-        "term": "made edit",
+        "term": "blu ray",
         "count": 2
       },
       {
-        "term": "blu ray",
+        "term": "aside filming",
+        "count": 2
+      },
+      {
+        "term": "filming apx",
+        "count": 2
+      },
+      {
+        "term": "apx mclaren",
+        "count": 2
+      },
+      {
+        "term": "mclaren shown",
         "count": 2
       }
     ],
@@ -834,10 +834,6 @@
           "count": 25
         },
         {
-          "term": "she",
-          "count": 14
-        },
-        {
           "term": "sequel",
           "count": 13
         },
@@ -846,23 +842,15 @@
           "count": 12
         },
         {
-          "term": "out",
-          "count": 11
+          "term": "much",
+          "count": 10
         },
         {
           "term": "kate",
           "count": 10
         },
         {
-          "term": "other",
-          "count": 9
-        },
-        {
           "term": "team",
-          "count": 9
-        },
-        {
-          "term": "any",
           "count": 9
         },
         {
@@ -871,10 +859,6 @@
         },
         {
           "term": "time",
-          "count": 8
-        },
-        {
-          "term": "made",
           "count": 8
         },
         {
@@ -887,6 +871,22 @@
         },
         {
           "term": "imax",
+          "count": 7
+        },
+        {
+          "term": "don",
+          "count": 7
+        },
+        {
+          "term": "brad",
+          "count": 7
+        },
+        {
+          "term": "apple",
+          "count": 7
+        },
+        {
+          "term": "again",
           "count": 7
         }
       ]
@@ -914,20 +914,8 @@
           "count": 177
         },
         {
-          "term": "all",
-          "count": 149
-        },
-        {
-          "term": "about",
-          "count": 129
-        },
-        {
           "term": "racing",
           "count": 129
-        },
-        {
-          "term": "more",
-          "count": 114
         },
         {
           "term": "time",
@@ -946,8 +934,8 @@
           "count": 101
         },
         {
-          "term": "out",
-          "count": 100
+          "term": "much",
+          "count": 93
         },
         {
           "term": "cars",
@@ -956,6 +944,18 @@
         {
           "term": "drinker",
           "count": 92
+        },
+        {
+          "term": "race",
+          "count": 90
+        },
+        {
+          "term": "fan",
+          "count": 78
+        },
+        {
+          "term": "gun",
+          "count": 78
         }
       ]
     }

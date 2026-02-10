@@ -24,13 +24,13 @@
   },
   "overall_label": "positive",
   "engagement": {
-    "total_likes": 133012,
+    "total_likes": 133007,
     "likes_por_sentimiento": {
-      "positive": 42501,
-      "neutral": 59226,
-      "negative": 31285
+      "positive": 42502,
+      "neutral": 59222,
+      "negative": 31283
     },
-    "avg_compound_ponderado_likes": 0.144,
+    "avg_compound_ponderado_likes": 0.145,
     "porcentaje_likes_positivos": 32.0,
     "interpretacion": "Los comentarios negativos concentran parte relevante del engagement"
   }

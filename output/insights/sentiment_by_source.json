@@ -11,7 +11,7 @@
       "positive": 52,
       "neutral": 41,
       "negative": 10,
-      "engagement_sum": 391,
+      "engagement_sum": 386,
       "compounds": [
         0.0,
         0.0,
@@ -137,12 +137,12 @@
       "pct_positive": 50.5,
       "pct_neutral": 39.8,
       "pct_negative": 9.7,
-      "engagement_per_review": 3.8,
+      "engagement_per_review": 3.7,
       "top_words": [
         {
           "word": "sonny",
-          "count": 115,
-          "per_100_reviews": 111.7
+          "count": 122,
+          "per_100_reviews": 118.4
         },
         {
           "word": "brad",
@@ -160,29 +160,14 @@
           "per_100_reviews": 78.6
         },
         {
-          "word": "can",
-          "count": 75,
-          "per_100_reviews": 72.8
-        },
-        {
           "word": "sequel",
-          "count": 72,
-          "per_100_reviews": 69.9
+          "count": 74,
+          "per_100_reviews": 71.8
         },
         {
           "word": "tom",
           "count": 72,
           "per_100_reviews": 69.9
-        },
-        {
-          "word": "real",
-          "count": 66,
-          "per_100_reviews": 64.1
-        },
-        {
-          "word": "first",
-          "count": 66,
-          "per_100_reviews": 64.1
         },
         {
           "word": "scene",
@@ -191,18 +176,13 @@
         },
         {
           "word": "time",
-          "count": 63,
-          "per_100_reviews": 61.2
-        },
-        {
-          "word": "they",
-          "count": 58,
-          "per_100_reviews": 56.3
+          "count": 60,
+          "per_100_reviews": 58.3
         },
         {
           "word": "people",
-          "count": 56,
-          "per_100_reviews": 54.4
+          "count": 55,
+          "per_100_reviews": 53.4
         },
         {
           "word": "imax",
@@ -211,33 +191,18 @@
         },
         {
           "word": "ray",
-          "count": 53,
-          "per_100_reviews": 51.5
-        },
-        {
-          "word": "look",
           "count": 50,
           "per_100_reviews": 48.5
         },
         {
           "word": "blu",
-          "count": 46,
-          "per_100_reviews": 44.7
-        },
-        {
-          "word": "out",
-          "count": 45,
-          "per_100_reviews": 43.7
-        },
-        {
-          "word": "she",
-          "count": 44,
-          "per_100_reviews": 42.7
+          "count": 43,
+          "per_100_reviews": 41.7
         },
         {
           "word": "don",
-          "count": 43,
-          "per_100_reviews": 41.7
+          "count": 42,
+          "per_100_reviews": 40.8
         },
         {
           "word": "pitt",
@@ -245,9 +210,9 @@
           "per_100_reviews": 40.8
         },
         {
-          "word": "photo",
-          "count": 40,
-          "per_100_reviews": 38.8
+          "word": "car",
+          "count": 41,
+          "per_100_reviews": 39.8
         },
         {
           "word": "mclaren",
@@ -255,14 +220,49 @@
           "per_100_reviews": 38.8
         },
         {
-          "word": "car",
+          "word": "kate",
           "count": 39,
           "per_100_reviews": 37.9
         },
         {
-          "word": "kate",
-          "count": 39,
-          "per_100_reviews": 37.9
+          "word": "shown",
+          "count": 38,
+          "per_100_reviews": 36.9
+        },
+        {
+          "word": "many",
+          "count": 37,
+          "per_100_reviews": 35.9
+        },
+        {
+          "word": "cruise",
+          "count": 37,
+          "per_100_reviews": 35.9
+        },
+        {
+          "word": "good",
+          "count": 37,
+          "per_100_reviews": 35.9
+        },
+        {
+          "word": "photo",
+          "count": 36,
+          "per_100_reviews": 35.0
+        },
+        {
+          "word": "aside",
+          "count": 36,
+          "per_100_reviews": 35.0
+        },
+        {
+          "word": "filming",
+          "count": 36,
+          "per_100_reviews": 35.0
+        },
+        {
+          "word": "inside",
+          "count": 36,
+          "per_100_reviews": 35.0
         }
       ]
     },
@@ -1219,19 +1219,9 @@
           "per_100_reviews": 3753.4
         },
         {
-          "word": "leclerc",
-          "count": 31866,
-          "per_100_reviews": 3494.1
-        },
-        {
           "word": "ferrari",
           "count": 31489,
           "per_100_reviews": 3452.7
-        },
-        {
-          "word": "then",
-          "count": 27985,
-          "per_100_reviews": 3068.5
         },
         {
           "word": "pitt",
@@ -1309,11 +1299,6 @@
           "per_100_reviews": 1158.7
         },
         {
-          "word": "than",
-          "count": 10549,
-          "per_100_reviews": 1156.7
-        },
-        {
           "word": "actor",
           "count": 10186,
           "per_100_reviews": 1116.9
@@ -1332,6 +1317,21 @@
           "word": "fighter",
           "count": 10109,
           "per_100_reviews": 1108.4
+        },
+        {
+          "word": "above",
+          "count": 10109,
+          "per_100_reviews": 1108.4
+        },
+        {
+          "word": "jets",
+          "count": 10108,
+          "per_100_reviews": 1108.3
+        },
+        {
+          "word": "cue",
+          "count": 10107,
+          "per_100_reviews": 1108.2
         }
       ]
     },
@@ -2442,16 +2442,6 @@
           "per_100_reviews": 517.4
         },
         {
-          "word": "they",
-          "count": 5031,
-          "per_100_reviews": 485.6
-        },
-        {
-          "word": "can",
-          "count": 4862,
-          "per_100_reviews": 469.3
-        },
-        {
           "word": "race",
           "count": 4674,
           "per_100_reviews": 451.2
@@ -2470,11 +2460,6 @@
           "word": "awesome",
           "count": 3836,
           "per_100_reviews": 370.3
-        },
-        {
-          "word": "real",
-          "count": 3676,
-          "per_100_reviews": 354.8
         },
         {
           "word": "drivers",
@@ -2497,16 +2482,6 @@
           "per_100_reviews": 342.6
         },
         {
-          "word": "other",
-          "count": 3500,
-          "per_100_reviews": 337.8
-        },
-        {
-          "word": "during",
-          "count": 3497,
-          "per_100_reviews": 337.5
-        },
-        {
           "word": "creating",
           "count": 3495,
           "per_100_reviews": 337.4
@@ -2517,14 +2492,39 @@
           "per_100_reviews": 336.7
         },
         {
-          "word": "etc",
-          "count": 3470,
-          "per_100_reviews": 334.9
-        },
-        {
           "word": "idea",
           "count": 3467,
           "per_100_reviews": 334.7
+        },
+        {
+          "word": "teams",
+          "count": 3466,
+          "per_100_reviews": 334.6
+        },
+        {
+          "word": "effort",
+          "count": 3456,
+          "per_100_reviews": 333.6
+        },
+        {
+          "word": "pit",
+          "count": 3451,
+          "per_100_reviews": 333.1
+        },
+        {
+          "word": "realism",
+          "count": 3440,
+          "per_100_reviews": 332.0
+        },
+        {
+          "word": "driving",
+          "count": 3440,
+          "per_100_reviews": 332.0
+        },
+        {
+          "word": "themselves",
+          "count": 3439,
+          "per_100_reviews": 331.9
         }
       ]
     }

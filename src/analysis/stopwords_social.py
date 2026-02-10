@@ -49,12 +49,14 @@ _MOVIE_GENERIC = {
 }
 
 # Ruido típico en comentarios (Reddit, YouTube, etc.)
+# Incluye nombres que salen mucho en contexto negativo (ej. leclerc) para no distorsionar wordclouds
 _SOCIAL_NOISE = {
     "https", "http", "www", "com", "org", "net", "html", "sportsmobile",
     "lol", "lols", "lmao", "haha", "hahaha", "xd", "omg", "wtf", "idk", "imo", "tbh",
     "btw", "etc", "hey", "oh", "uh", "um", "yeah", "nah", "ok", "okay",
     "right", "left", "first", "last", "new", "old", "long", "big", "small",
     "real", "really", "like", "get", "one", "way", "thing", "things",
+    "leclerc",
 }
 
 # Unión final: no incluir palabras con sentimiento (love, hate, great, amazing, etc.)

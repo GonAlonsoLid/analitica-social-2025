@@ -4,7 +4,7 @@
 - Total analizado: 2258 comentarios
 - Positivos: 1420 (62.9%)
 - Neutros: 534 | Negativos: 304
-- **Total likes/engagement:** 133,417
+- **Total likes/engagement:** 133,412
 - **% engagement en positivos:** 31.9% (lo que más resuena)
 
 ---
@@ -17,27 +17,27 @@
 - **great** (170)
 - **brad** (155)
 - **pitt** (136)
-- **all** (119)
 - **racing** (114)
 - **best** (111)
 - **loved** (104)
-- **about** (102)
-- **more** (94)
-- **out** (88)
 - **time** (88)
+- **much** (82)
 - **top** (80)
 - **love** (80)
 - **race** (73)
+- **fan** (69)
+- **amazing** (68)
+- **drinker** (64)
 
 ### Palabras con más impacto (ponderadas por likes)
 
-- **love** (impacto: 10,620)
-- **about** (impacto: 8,631)
-- **lewis** (impacto: 7,030)
-- **hamilton** (impacto: 7,029)
+- **love** (impacto: 10,619)
+- **lewis** (impacto: 7,029)
+- **hamilton** (impacto: 7,028)
 - **went** (impacto: 7,018)
 - **fernando** (impacto: 6,981)
 - **alonso** (impacto: 6,981)
+- **much** (impacto: 6,849)
 - **hans** (impacto: 6,392)
 - **score** (impacto: 6,368)
 - **zimmer** (impacto: 6,267)
@@ -49,11 +49,11 @@
 - hans zimmer (26)
 - ford ferrari (25)
 - tom cruise (18)
-- last night (18)
-- year old (16)
 - lewis hamilton (15)
 - sonny hayes (14)
+- best ever (14)
 - days thunder (14)
+- drive survive (14)
 
 ### Insights para marketing
 
@@ -85,7 +85,6 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 - **pitt** (27)
 - **brad** (26)
 - **boring** (24)
-- **all** (23)
 - **top** (20)
 - **gun** (20)
 - **time** (20)
@@ -93,10 +92,11 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 - **drinker** (19)
 - **don** (18)
 - **racing** (18)
-- **about** (17)
-- **only** (14)
-- **were** (14)
+- **much** (15)
 - **motorsport** (14)
+- **cars** (13)
+- **race** (13)
+- **bad** (12)
 
 ### Palabras negativas con más impacto
 
@@ -156,8 +156,8 @@ That's perfect !!!..." — YouTube ❤️ 3,481
 
 ### Reddit
 - Total: 117 | Pos: 55 | Neu: 50 | Neg: 12
-- Top palabras: sonny, she, sequel, car, out, kate, other, team
+- Top palabras: sonny, sequel, car, much, kate, team, end, time
 
 ### YouTube
 - Total: 2141 | Pos: 1365 | Neu: 484 | Neg: 292
-- Top palabras: good, brad, pitt, great, all, about, racing, more
+- Top palabras: good, brad, pitt, great, racing, time, best, loved
